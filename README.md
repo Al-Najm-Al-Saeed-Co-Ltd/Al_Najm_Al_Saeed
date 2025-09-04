@@ -92,7 +92,7 @@ The application will be available at `http://localhost:8000`
 
 ## Technologies Used
 
-- **Backend**: Laravel 11, PHP 8.2+
+- **Backend**: Laravel 12, PHP 8.2+
 - **Frontend**: Vue 3, TypeScript, Tailwind CSS
 - **Build Tool**: Vite
 - **UI Components**: shadcn-vue
