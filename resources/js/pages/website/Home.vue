@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-50">
+  <div class="bg-gray-50 custom-scrollbar">
     <!-- Navigation -->
     <nav class="fixed top-4 left-4 right-4 z-50 mx-auto max-w-7xl">
         <div class="backdrop-blur-xl bg-white/70 rounded-2xl shadow-2xl border border-white/20">
@@ -762,25 +762,13 @@ onUnmounted(() => {
     </script>
 
 <style scoped>
-.gradient-bg {
-  background: linear-gradient(135deg, #3d9970 0%, #2d7a5a 100%);
-}
-
-.hero-gradient {
-  background: linear-gradient(135deg, #3d9970 0%, #2d7a5a 50%, #1a5a3a 100%);
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(61, 153, 112, 0.2), 0 10px 10px -5px rgba(61, 153, 112, 0.1);
-}
+/* All brand colors, gradients, and utilities are now defined globally in app.css */
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -791,46 +779,8 @@ onUnmounted(() => {
   }
 }
 
-.brand-green {
-  color: #3d9970;
-}
-
-.bg-brand-green {
-  background-color: #3d9970;
-}
-
-.hover-bg-brand-green:hover {
-  background-color: #2d7a5a;
-}
-
-.border-brand-green {
-  border-color: #3d9970;
-}
-
-.text-brand-green {
-  color: #3d9970;
-}
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #3d9970;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #2d7a5a;
 }
 </style>
