@@ -366,35 +366,35 @@
                     
             <form @submit.prevent="submitCallbackForm" class="space-y-4">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                <input v-model="callbackForm.name" type="text" id="name" name="name"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                  required>
+                            <Label for="name">Your Name</Label>
+                <Input v-model="callbackForm.name" type="text" id="name" name="name"
+                  class="mt-1 block w-full"
+                  required />
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
-                <input v-model="callbackForm.email" type="email" id="email" name="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                  required>
+                            <Label for="email">Your Email</Label>
+                <Input v-model="callbackForm.email" type="email" id="email" name="email"
+                  class="mt-1 block w-full"
+                  required />
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label for="callback_date" class="block text-sm font-medium text-gray-700 mb-2">Call Back Date</label>
-                  <input v-model="callbackForm.callback_date" type="date" id="callback_date" name="callback_date"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                    required>
+                                <Label for="callback_date">Call Back Date</Label>
+                  <Input v-model="callbackForm.callback_date" type="date" id="callback_date" name="callback_date"
+                    class="mt-1 block w-full"
+                    required />
                             </div>
                             <div>
-                                <label for="callback_time" class="block text-sm font-medium text-gray-700 mb-2">Call Back Time</label>
-                  <input v-model="callbackForm.callback_time" type="time" id="callback_time" name="callback_time"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                    required>
+                                <Label for="callback_time">Call Back Time</Label>
+                  <Input v-model="callbackForm.callback_time" type="time" id="callback_time" name="callback_time"
+                    class="mt-1 block w-full"
+                    required />
                             </div>
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <Label for="message">Message</Label>
                 <textarea v-model="callbackForm.message" id="message" name="message" rows="4"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
+                  class="mt-1 block w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex min-h-[60px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                   placeholder="Tell us about your needs..." required></textarea>
                         </div>
               <button type="submit"
@@ -490,43 +490,43 @@
               <form @submit.prevent="submitContactForm" class="space-y-6">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="first_name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                    <input v-model="contactForm.first_name" type="text" id="first_name" name="first_name"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                      required>
+                                    <Label for="first_name">First Name</Label>
+                    <Input v-model="contactForm.first_name" type="text" id="first_name" name="first_name"
+                      class="mt-1 block w-full"
+                      required />
                                 </div>
                                 <div>
-                                    <label for="last_name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                    <input v-model="contactForm.last_name" type="text" id="last_name" name="last_name"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                      required>
+                                    <Label for="last_name">Last Name</Label>
+                    <Input v-model="contactForm.last_name" type="text" id="last_name" name="last_name"
+                      class="mt-1 block w-full"
+                      required />
                                 </div>
                             </div>
 
                             <div>
-                                <label for="contact_email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input v-model="contactForm.email" type="email" id="contact_email" name="contact_email"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                    required>
+                                <Label for="contact_email">Email Address</Label>
+                  <Input v-model="contactForm.email" type="email" id="contact_email" name="contact_email"
+                    class="mt-1 block w-full"
+                    required />
                             </div>
 
                             <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <input v-model="contactForm.phone" type="tel" id="phone" name="phone"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
-                    required>
+                                <Label for="phone">Phone Number</Label>
+                  <Input v-model="contactForm.phone" type="tel" id="phone" name="phone"
+                    class="mt-1 block w-full"
+                    required />
                             </div>
 
                             <div>
-                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                  <input v-model="contactForm.company" type="text" id="company" name="company"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300">
+                                <Label for="company">Company Name</Label>
+                  <Input v-model="contactForm.company" type="text" id="company" name="company"
+                    class="mt-1 block w-full" />
                             </div>
 
                             <div>
-                                <label for="contact_message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <Label for="contact_message">Message</Label>
                   <textarea v-model="contactForm.message" id="contact_message" name="contact_message" rows="4"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-300"
+                    class="mt-1 block w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex min-h-[60px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     placeholder="Tell us about your project..." required></textarea>
                             </div>
 
@@ -649,6 +649,8 @@ import {
   Linkedin,
   Instagram
 } from 'lucide-vue-next'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 // Reactive data
 const isMobileMenuOpen = ref(false)
