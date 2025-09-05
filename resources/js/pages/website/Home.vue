@@ -442,7 +442,7 @@
               If you're passionate about excellence and innovation, we'd love to hear from you.
             </p>
             <a href="#contact"
-              class="bg-brand-green hover-bg-brand-green text-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
+              class="bg-brand-green hover-bg-brand-green text-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-300 inline-flex items-center justify-center">
               <Mail class="w-5 h-5 mr-2" />Send Your Resume
             </a>
           </div>
