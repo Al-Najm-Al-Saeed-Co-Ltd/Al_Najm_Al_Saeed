@@ -193,25 +193,64 @@
           <h3 class="text-3xl font-bold text-gray-900 mb-8">We Are Professional & Expert Workers</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div class="w-24 h-24 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <User class="w-12 h-12 text-white" />
+              <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-brand-green">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" 
+                     alt="A.S Usmani" 
+                     class="w-full h-full object-cover">
               </div>
               <h4 class="text-xl font-semibold text-gray-900 mb-2">A.S Usmani</h4>
-              <p class="text-brand-green font-medium">CEO & Founder</p>
+              <p class="text-brand-green font-medium mb-4">CEO & Founder</p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                  <Linkedin class="w-5 h-5" />
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300">
+                  <Facebook class="w-5 h-5" />
+                </a>
+                <a href="#" class="text-green-500 hover:text-green-700 transition duration-300">
+                  <MessageCircle class="w-5 h-5" />
+                </a>
+              </div>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div class="w-24 h-24 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <User class="w-12 h-12 text-white" />
+              <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-brand-green">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" 
+                     alt="Areeb Saeed Usmani" 
+                     class="w-full h-full object-cover">
               </div>
               <h4 class="text-xl font-semibold text-gray-900 mb-2">Areeb Saeed Usmani</h4>
-              <p class="text-brand-green font-medium">Director</p>
+              <p class="text-brand-green font-medium mb-4">Director</p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                  <Linkedin class="w-5 h-5" />
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300">
+                  <Facebook class="w-5 h-5" />
+                </a>
+                <a href="#" class="text-green-500 hover:text-green-700 transition duration-300">
+                  <MessageCircle class="w-5 h-5" />
+                </a>
+              </div>
             </div>
             <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <div class="w-24 h-24 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <User class="w-12 h-12 text-white" />
+              <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-brand-green">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" 
+                     alt="Suhail Saeed Usmani" 
+                     class="w-full h-full object-cover">
               </div>
               <h4 class="text-xl font-semibold text-gray-900 mb-2">Suhail Saeed Usmani</h4>
-              <p class="text-brand-green font-medium">Project Manager</p>
+              <p class="text-brand-green font-medium mb-4">Project Manager</p>
+              <div class="flex justify-center space-x-3">
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300">
+                  <Linkedin class="w-5 h-5" />
+                </a>
+                <a href="#" class="text-blue-500 hover:text-blue-700 transition duration-300">
+                  <Facebook class="w-5 h-5" />
+                </a>
+                <a href="#" class="text-green-500 hover:text-green-700 transition duration-300">
+                  <MessageCircle class="w-5 h-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -639,7 +678,8 @@ import {
   Facebook,
   Twitter,
   Linkedin,
-  Instagram
+  Instagram,
+  MessageCircle
 } from 'lucide-vue-next'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
