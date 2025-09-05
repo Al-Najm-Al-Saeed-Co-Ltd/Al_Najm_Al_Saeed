@@ -5,19 +5,19 @@
     <!-- Hero Section -->
     <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-20 sm:pt-24">
       <div class="absolute inset-0 bg-black opacity-10"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <!-- Left Column - Text Content -->
           <div class="text-white order-2 lg:order-1">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Create your dream with us,
               <span class="text-white">where every step brings joy!</span>
             </h1>
-            <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-100 leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl mb-8 text-gray-100 leading-relaxed">
               We are the Experts in Construction, Maintenance, HVAC, and IT Solutions.
               Innovative solutions for a diverse range of needs.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12">
               <a href="#services"
                 class="bg-white text-brand-green px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition duration-300 text-center flex items-center justify-center shadow-lg hover:shadow-xl">
                 <Rocket class="w-5 h-5 mr-2" />Our Services
@@ -78,16 +78,16 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">About Al Najm Al Saeed Co. Ltd.</h2>
-          <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">About Al Najm Al Saeed Co. Ltd.</h2>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             At Al Najm Al Saeed Co. Ltd., we excel in delivering top-tier construction and maintenance services,
             alongside advanced HVAC and IT solutions. Our dedication to quality and innovation ensures that we provide
             tailored, comprehensive solutions that address the unique requirements of each client.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
             <h3 class="text-3xl font-bold text-gray-900 mb-6">Innovative Solutions for a Diverse Range of Needs</h3>
             <p class="text-lg text-gray-600 mb-6">
@@ -135,8 +135,8 @@
         </div>
 
         <!-- Team Section -->
-        <div class="text-center mb-16">
-          <div class="mb-12">
+        <div class="text-center">
+          <div class="mb-16">
             <h3 class="text-4xl font-bold text-gray-900 mb-4">We Are Professional & Expert Workers</h3>
             <div class="w-24 h-1 bg-brand-green mx-auto rounded-full"></div>
           </div>
@@ -242,14 +242,14 @@
     <!-- Services Section -->
     <section id="services" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">We Provide The Best Construction, HVAC & IT Services</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">We Provide The Best Construction, HVAC & IT Services</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive solutions tailored to meet your specific needs with excellence and innovation
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           <!-- HVAC Systems -->
           <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
             <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
@@ -333,12 +333,12 @@
             <h2 class="text-4xl font-bold text-gray-900 mb-6">HVAC Systems</h2>
             <h3 class="text-2xl font-semibold text-brand-green mb-4">Expert HVAC Solutions</h3>
             <p class="text-xl text-gray-600 mb-6">Complete Heating, Ventilation & Air Conditioning Services</p>
-            <p class="text-lg text-gray-600 mb-8">
+            <p class="text-lg text-gray-600 mb-10 leading-relaxed">
               From new installations to comprehensive maintenance, our certified HVAC professionals ensure your indoor
               environment remains comfortable and energy-efficient year-round.
             </p>
 
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid grid-cols-2 gap-8">
               <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 bg-brand-green rounded-lg flex items-center justify-center">
                   <Plus class="w-6 h-6 text-white" />
@@ -427,18 +427,18 @@ class="mt-1 block w-full" required />
     <!-- Career Section -->
     <section id="career" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Join Our Team</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">Join Our Team</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Be part of a dynamic team that's shaping the future of construction, HVAC, and IT solutions
           </p>
         </div>
 
-        <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="bg-white rounded-2xl p-10 shadow-lg">
           <div class="text-center">
-            <Users class="w-16 h-16 text-brand-green mb-6 mx-auto" />
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">Career Opportunities</h3>
-            <p class="text-lg text-gray-600 mb-8">
+            <Users class="w-16 h-16 text-brand-green mb-8 mx-auto" />
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Career Opportunities</h3>
+            <p class="text-lg text-gray-600 mb-10 leading-relaxed">
               We're always looking for talented professionals to join our growing team.
               If you're passionate about excellence and innovation, we'd love to hear from you.
             </p>
@@ -454,19 +454,19 @@ class="mt-1 block w-full" required />
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">Contact Us</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Get in touch with us for any inquiries about our services
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <!-- Contact Info -->
           <div class="lg:col-span-1">
-            <div class="bg-gray-100 rounded-2xl p-8">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-6">Our Office</h3>
-              <div class="space-y-6">
+            <div class="bg-gray-100 rounded-2xl p-10">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-8">Our Office</h3>
+              <div class="space-y-8">
                 <div class="flex items-start space-x-4">
                   <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin class="w-6 h-6 text-red-600" />
@@ -502,8 +502,8 @@ class="mt-1 block w-full" required />
 
           <!-- Contact Form -->
           <div class="lg:col-span-2">
-            <div class="bg-gray-50 p-8 rounded-xl">
-              <h3 class="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
+            <div class="bg-gray-50 p-10 rounded-xl">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-8">Send us a Message</h3>
               <form @submit.prevent="submitContactForm" class="space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div class="grid gap-2">
