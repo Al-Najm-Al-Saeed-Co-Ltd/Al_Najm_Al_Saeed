@@ -1,5 +1,6 @@
 <template>
   <WebsiteLayout>
+    <Head title="Home" />
 
     <!-- Hero Section -->
     <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-20 sm:pt-24">
@@ -558,6 +559,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
+import { Head } from '@inertiajs/vue3'
 import {
   Rocket,
   Phone,
