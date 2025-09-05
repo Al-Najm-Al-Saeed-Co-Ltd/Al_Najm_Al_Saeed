@@ -385,30 +385,30 @@
               construction, HVAC, IT services, or maintenance, our team is ready to assist you.
             </p>
 
-            <form @submit.prevent="submitCallbackForm" class="space-y-4">
-              <div>
+            <form @submit.prevent="submitCallbackForm" class="space-y-6">
+              <div class="grid gap-2">
                 <Label for="name">Your Name</Label>
                 <Input v-model="callbackForm.name" type="text" id="name" name="name" class="mt-1 block w-full"
                   required />
               </div>
-              <div>
+              <div class="grid gap-2">
                 <Label for="email">Your Email</Label>
                 <Input v-model="callbackForm.email" type="email" id="email" name="email" class="mt-1 block w-full"
                   required />
               </div>
               <div class="grid grid-cols-2 gap-4">
-                <div>
+                <div class="grid gap-2">
                   <Label for="callback_date">Call Back Date</Label>
                   <Input v-model="callbackForm.callback_date" type="date" id="callback_date" name="callback_date"
                     class="mt-1 block w-full" required />
                 </div>
-                <div>
+                <div class="grid gap-2">
                   <Label for="callback_time">Call Back Time</Label>
                   <Input v-model="callbackForm.callback_time" type="time" id="callback_time" name="callback_time"
-                    class="mt-1 block w-full" required />
+class="mt-1 block w-full" required />
                 </div>
               </div>
-              <div>
+              <div class="grid gap-2">
                 <Label for="message">Message</Label>
                 <textarea v-model="callbackForm.message" id="message" name="message" rows="4"
                   class="mt-1 block w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex min-h-[60px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
@@ -506,37 +506,37 @@
               <h3 class="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
               <form @submit.prevent="submitContactForm" class="space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
+                  <div class="grid gap-2">
                     <Label for="first_name">First Name</Label>
                     <Input v-model="contactForm.first_name" type="text" id="first_name" name="first_name"
                       class="mt-1 block w-full" required />
                   </div>
-                  <div>
+                  <div class="grid gap-2">
                     <Label for="last_name">Last Name</Label>
                     <Input v-model="contactForm.last_name" type="text" id="last_name" name="last_name"
                       class="mt-1 block w-full" required />
                   </div>
                 </div>
 
-                <div>
+                <div class="grid gap-2">
                   <Label for="contact_email">Email Address</Label>
                   <Input v-model="contactForm.email" type="email" id="contact_email" name="contact_email"
                     class="mt-1 block w-full" required />
                 </div>
 
-                <div>
+                <div class="grid gap-2">
                   <Label for="phone">Phone Number</Label>
                   <Input v-model="contactForm.phone" type="tel" id="phone" name="phone" class="mt-1 block w-full"
                     required />
                 </div>
 
-                <div>
+                <div class="grid gap-2">
                   <Label for="company">Company Name</Label>
                   <Input v-model="contactForm.company" type="text" id="company" name="company"
                     class="mt-1 block w-full" />
                 </div>
 
-                <div>
+                <div class="grid gap-2">
                   <Label for="contact_message">Message</Label>
                   <textarea v-model="contactForm.message" id="contact_message" name="contact_message" rows="4"
                     class="mt-1 block w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex min-h-[60px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
