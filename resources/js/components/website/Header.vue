@@ -22,9 +22,16 @@
           <!-- Mobile menu button -->
           <div class="md:hidden flex items-center">
             <button @click="toggleMobileMenu"
-              class="text-gray-700 hover:text-brand-green transition-colors duration-300"
+              class="text-gray-700 hover:text-brand-green transition-all duration-300 relative w-6 h-6 hover:scale-110 active:scale-95"
               :aria-expanded="isMobileMenuOpen" aria-label="Toggle mobile menu">
-              <Menu class="w-6 h-6" />
+              <Transition enter-active-class="transition-all duration-300 ease-out"
+                enter-from-class="opacity-0 rotate-90 scale-75" enter-to-class="opacity-100 rotate-0 scale-100"
+                leave-active-class="transition-all duration-300 ease-in"
+                leave-from-class="opacity-100 rotate-0 scale-100" leave-to-class="opacity-0 -rotate-90 scale-75"
+                mode="out-in">
+                <Menu v-if="!isMobileMenuOpen" key="menu" class="w-6 h-6 absolute inset-0" />
+                <X v-else key="close" class="w-6 h-6 absolute inset-0" />
+              </Transition>
             </button>
           </div>
         </div>
@@ -49,7 +56,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { Menu } from 'lucide-vue-next'
+import { Menu, X } from 'lucide-vue-next'
 
 // Navigation data - centralized for maintainability
 const navigationItems = [
