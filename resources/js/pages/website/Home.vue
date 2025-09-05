@@ -391,23 +391,27 @@
               <div class="grid gap-2">
                 <Label for="name">Your Name</Label>
                 <Input v-model="callbackForm.name" type="text" id="name" name="name" class="mt-1 block w-full"
-                  required />
+                  placeholder="Enter your full name" required />
+                <InputError :message="callbackErrors.name" />
               </div>
               <div class="grid gap-2">
                 <Label for="email">Your Email</Label>
                 <Input v-model="callbackForm.email" type="email" id="email" name="email" class="mt-1 block w-full"
-                  required />
+                  placeholder="Enter your email address" required />
+                <InputError :message="callbackErrors.email" />
               </div>
               <div class="grid grid-cols-2 gap-4">
                 <div class="grid gap-2">
                   <Label for="callback_date">Call Back Date</Label>
                   <Input v-model="callbackForm.callback_date" type="date" id="callback_date" name="callback_date"
                     class="mt-1 block w-full" required />
+                  <InputError :message="callbackErrors.callback_date" />
                 </div>
                 <div class="grid gap-2">
                   <Label for="callback_time">Call Back Time</Label>
                   <Input v-model="callbackForm.callback_time" type="time" id="callback_time" name="callback_time"
                     class="mt-1 block w-full" required />
+                  <InputError :message="callbackErrors.callback_time" />
                 </div>
               </div>
               <div class="grid gap-2">
@@ -415,11 +419,14 @@
                 <textarea v-model="callbackForm.message" id="message" name="message" rows="4"
                   class="mt-1 block w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex min-h-[60px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                   placeholder="Tell us about your needs..." required></textarea>
+                <InputError :message="callbackErrors.message" />
               </div>
-              <button type="submit"
-                class="w-full bg-brand-green hover:bg-brand-green/90 text-white py-3 px-6 rounded-lg font-semibold transition duration-300 flex items-center justify-center">
-                <Send class="w-5 h-5 mr-2" />Request Call Back
-              </button>
+              <Button type="submit"
+                class="w-full bg-brand-green hover:bg-brand-green/90 text-white py-3 px-6 rounded-lg font-semibold"
+                :disabled="isSubmittingCallback">
+                <Send class="w-5 h-5 mr-2" />
+                {{ isSubmittingCallback ? 'Submitting...' : 'Request Call Back' }}
+              </Button>
             </form>
           </div>
         </div>
@@ -511,31 +518,36 @@
                   <div class="grid gap-2">
                     <Label for="first_name">First Name</Label>
                     <Input v-model="contactForm.first_name" type="text" id="first_name" name="first_name"
-                      class="mt-1 block w-full" required />
+                      class="mt-1 block w-full" placeholder="Enter your first name" required />
+                    <InputError :message="contactErrors.first_name" />
                   </div>
                   <div class="grid gap-2">
                     <Label for="last_name">Last Name</Label>
                     <Input v-model="contactForm.last_name" type="text" id="last_name" name="last_name"
-                      class="mt-1 block w-full" required />
+                      class="mt-1 block w-full" placeholder="Enter your last name" required />
+                    <InputError :message="contactErrors.last_name" />
                   </div>
                 </div>
 
                 <div class="grid gap-2">
                   <Label for="contact_email">Email Address</Label>
                   <Input v-model="contactForm.email" type="email" id="contact_email" name="contact_email"
-                    class="mt-1 block w-full" required />
+                    class="mt-1 block w-full" placeholder="Enter your email address" required />
+                  <InputError :message="contactErrors.email" />
                 </div>
 
                 <div class="grid gap-2">
                   <Label for="phone">Phone Number</Label>
                   <Input v-model="contactForm.phone" type="tel" id="phone" name="phone" class="mt-1 block w-full"
-                    required />
+                    placeholder="Enter your phone number" required />
+                  <InputError :message="contactErrors.phone" />
                 </div>
 
                 <div class="grid gap-2">
                   <Label for="company">Company Name</Label>
-                  <Input v-model="contactForm.company" type="text" id="company" name="company"
-                    class="mt-1 block w-full" />
+                  <Input v-model="contactForm.company" type="text" id="company" name="company" class="mt-1 block w-full"
+                    placeholder="Enter your company name (optional)" />
+                  <InputError :message="contactErrors.company" />
                 </div>
 
                 <div class="grid gap-2">
@@ -543,12 +555,15 @@
                   <textarea v-model="contactForm.message" id="contact_message" name="contact_message" rows="4"
                     class="mt-1 block w-full file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex min-h-[60px] w-full min-w-0 rounded-md border bg-transparent px-3 py-2 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
                     placeholder="Tell us about your project..." required></textarea>
+                  <InputError :message="contactErrors.message" />
                 </div>
 
-                <button type="submit"
-                  class="w-full bg-brand-green hover:bg-brand-green/90 text-white py-3 px-6 rounded-lg font-semibold transition duration-300 flex items-center justify-center">
-                  <Send class="w-5 h-5 mr-2" />Send Message
-                </button>
+                <Button type="submit"
+                  class="w-full bg-brand-green hover:bg-brand-green/90 text-white py-3 px-6 rounded-lg font-semibold"
+                  :disabled="isSubmittingContact">
+                  <Send class="w-5 h-5 mr-2" />
+                  {{ isSubmittingContact ? 'Sending...' : 'Send Message' }}
+                </Button>
               </form>
             </div>
           </div>
@@ -590,6 +605,9 @@ import {
 } from 'lucide-vue-next'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Button } from '@/components/ui/button'
+import InputError from '@/components/InputError.vue'
+import { useNotification } from '@/composables/useNotification'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
 
 // Reactive data
@@ -633,6 +651,15 @@ const contactForm = reactive({
   message: ''
 })
 
+// Form errors
+const callbackErrors = reactive({})
+const contactErrors = reactive({})
+const isSubmittingCallback = ref(false)
+const isSubmittingContact = ref(false)
+
+// Notification system
+const { success } = useNotification()
+
 // Methods
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % slides.value.length
@@ -646,26 +673,58 @@ const goToSlide = (index) => {
   currentSlide.value = index
 }
 
-const submitCallbackForm = () => {
-  // Handle form submission
-  console.log('Callback form submitted:', callbackForm)
-  alert('Thank you for your callback request! We will get back to you soon.')
+const submitCallbackForm = async () => {
+  isSubmittingCallback.value = true
 
-  // Reset form
-  Object.keys(callbackForm).forEach(key => {
-    callbackForm[key] = ''
+  // Clear previous errors
+  Object.keys(callbackErrors).forEach(key => {
+    callbackErrors[key] = ''
   })
+
+  try {
+    // Handle form submission
+    console.log('Callback form submitted:', callbackForm)
+
+    // Show success notification
+    success('Thank you for your callback request! We will get back to you soon.')
+
+    // Reset form
+    Object.keys(callbackForm).forEach(key => {
+      callbackForm[key] = ''
+    })
+  } catch (error) {
+    console.error('Callback form error:', error)
+    // Handle validation errors here if needed
+  } finally {
+    isSubmittingCallback.value = false
+  }
 }
 
-const submitContactForm = () => {
-  // Handle form submission
-  console.log('Contact form submitted:', contactForm)
-  alert('Thank you for your message! We will get back to you soon.')
+const submitContactForm = async () => {
+  isSubmittingContact.value = true
 
-  // Reset form
-  Object.keys(contactForm).forEach(key => {
-    contactForm[key] = ''
+  // Clear previous errors
+  Object.keys(contactErrors).forEach(key => {
+    contactErrors[key] = ''
   })
+
+  try {
+    // Handle form submission
+    console.log('Contact form submitted:', contactForm)
+
+    // Show success notification
+    success('Thank you for your message! We will get back to you soon.')
+
+    // Reset form
+    Object.keys(contactForm).forEach(key => {
+      contactForm[key] = ''
+    })
+  } catch (error) {
+    console.error('Contact form error:', error)
+    // Handle validation errors here if needed
+  } finally {
+    isSubmittingContact.value = false
+  }
 }
 
 // Lifecycle hooks

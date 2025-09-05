@@ -72,6 +72,7 @@ const navigationItems = [
 // Reactive data
 const isMobileMenuOpen = ref(false)
 
+
 // Methods
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
@@ -105,6 +106,7 @@ const handleNavClick = (isMobile) => {
     closeMobileMenu()
   }
 }
+
 
 // Close mobile menu when clicking outside
 const handleClickOutside = (event) => {

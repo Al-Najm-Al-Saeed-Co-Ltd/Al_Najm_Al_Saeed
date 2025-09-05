@@ -6,6 +6,9 @@
     </main>
     <Footer />
     
+    <!-- Notification Container -->
+    <NotificationContainer />
+    
     <!-- Back to Top Button -->
     <button v-show="showBackToTop" @click="scrollToTop"
       class="fixed bottom-8 right-8 bg-brand-green hover:bg-brand-green/90 text-white w-12 h-12 rounded-full shadow-lg transition duration-300 flex items-center justify-center">
@@ -19,6 +22,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { ArrowUp } from 'lucide-vue-next'
 import Header from '@/components/website/Header.vue'
 import Footer from '@/components/website/Footer.vue'
+import NotificationContainer from '@/components/ui/notification/NotificationContainer.vue'
 
 // Reactive data
 const showBackToTop = ref(false)
