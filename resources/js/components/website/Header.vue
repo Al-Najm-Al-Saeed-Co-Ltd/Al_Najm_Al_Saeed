@@ -58,7 +58,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
 
-// Navigation data - centralized for maintainability
 const navigationItems = [
   { href: '#home', label: 'Home', isButton: false },
   { href: '#about', label: 'About', isButton: false },
@@ -69,21 +68,16 @@ const navigationItems = [
   { href: '#quote', label: 'Get A Quote', isButton: true }
 ]
 
-// Reactive data
 const isMobileMenuOpen = ref(false)
 
-
-// Methods
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
 
-// Close mobile menu when clicking outside (optional enhancement)
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
 
-// NavLink component logic
 const getNavLinkClasses = (isButton, isMobile) => {
   const baseClasses = 'font-medium transition duration-300'
 
@@ -107,8 +101,6 @@ const handleNavClick = (isMobile) => {
   }
 }
 
-
-// Close mobile menu when clicking outside
 const handleClickOutside = (event) => {
   const nav = event.target.closest('nav')
   if (!nav && isMobileMenuOpen.value) {
@@ -116,7 +108,6 @@ const handleClickOutside = (event) => {
   }
 }
 
-// Lifecycle hooks
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
 })
