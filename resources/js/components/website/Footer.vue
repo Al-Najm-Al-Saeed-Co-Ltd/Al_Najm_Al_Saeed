@@ -4,10 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center mb-4">
-            <Building class="w-8 h-8 text-brand-green mr-3" />
-            <h3 class="text-2xl font-bold">
-              <span class="text-brand-green">Al Najm</span> Al Saeed
-            </h3>
+            <img src="/assets/website/logo-white.svg" alt="Al Najm Al Saeed" class="h-14 w-auto" />
           </div>
           <p class="text-gray-300 mb-4">
             Welcome to Al Najm Al Saeed Co. Ltd., where innovation drives excellence in construction, HVAC, IT
@@ -68,5 +65,5 @@
 </template>
 
 <script setup>
-import { Building, Facebook, Twitter, Linkedin, Instagram } from 'lucide-vue-next'
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-vue-next'
 </script>
