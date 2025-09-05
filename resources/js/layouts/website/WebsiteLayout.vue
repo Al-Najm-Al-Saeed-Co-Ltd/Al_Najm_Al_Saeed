@@ -17,8 +17,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { ArrowUp } from 'lucide-vue-next'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import Header from '@/components/website/Header.vue'
+import Footer from '@/components/website/Footer.vue'
 
 // Reactive data
 const showBackToTop = ref(false)
