@@ -1,14 +1,11 @@
 <template>
   <nav class="fixed top-4 left-4 right-4 z-50 mx-auto max-w-7xl">
     <div class="backdrop-blur-xl bg-white/70 rounded-2xl shadow-2xl border border-white/20">
-      <div class="px-6 py-4">
+      <div class="px-6 py-2">
         <div class="flex justify-between items-center">
           <div class="flex items-center">
             <div class="flex-shrink-0 flex items-center">
-              <Building class="w-8 h-8 text-brand-green mr-3" />
-              <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-                <span class="text-brand-green">Al Najm</span> Al Saeed
-              </h1>
+              <img src="/assets/website/logo-black.svg" alt="Al Najm Al Saeed" class="h-12 sm:h-14 w-auto" />
             </div>
           </div>
 
@@ -59,7 +56,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Building, Menu } from 'lucide-vue-next'
+import { Menu } from 'lucide-vue-next'
 
 // Reactive data
 const isMobileMenuOpen = ref(false)
