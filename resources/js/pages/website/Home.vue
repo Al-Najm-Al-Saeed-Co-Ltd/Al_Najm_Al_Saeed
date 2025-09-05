@@ -1,62 +1,5 @@
 <template>
-  <div class="bg-gray-50 custom-scrollbar">
-    <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 z-50 mx-auto max-w-7xl">
-      <div class="backdrop-blur-xl bg-white/70 rounded-2xl shadow-2xl border border-white/20">
-        <div class="px-6 py-4">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <div class="flex-shrink-0 flex items-center">
-                <Building class="w-8 h-8 text-brand-green mr-3" />
-                <h1 class="text-xl sm:text-2xl font-bold text-gray-900">
-                  <span class="text-brand-green">Al Najm</span> Al Saeed
-                </h1>
-              </div>
-            </div>
-
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
-              <a href="#home" class="text-gray-700 hover:text-brand-green font-medium transition duration-300">Home</a>
-              <a href="#about"
-                class="text-gray-700 hover:text-brand-green font-medium transition duration-300">About</a>
-              <a href="#services"
-                class="text-gray-700 hover:text-brand-green font-medium transition duration-300">Services</a>
-              <a href="#hvac" class="text-gray-700 hover:text-brand-green font-medium transition duration-300">HVAC</a>
-              <a href="#career"
-                class="text-gray-700 hover:text-brand-green font-medium transition duration-300">Career</a>
-              <a href="#contact"
-                class="text-gray-700 hover:text-brand-green font-medium transition duration-300">Contact</a>
-              <a href="#quote"
-                class="bg-brand-green hover:bg-brand-green/90 text-white px-6 py-2 rounded-xl font-medium transition duration-300">
-                Get A Quote
-              </a>
-            </div>
-
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
-              <button @click="toggleMobileMenu" class="text-gray-700 hover:text-brand-green">
-                <Menu class="w-6 h-6" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Navigation -->
-        <div v-show="isMobileMenuOpen" class="md:hidden border-t border-white/20">
-          <div class="px-6 py-4 space-y-2">
-            <a href="#home" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Home</a>
-            <a href="#about" class="block py-2 text-gray-700 hover:text-brand-green font-medium">About</a>
-            <a href="#services" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Services</a>
-            <a href="#hvac" class="block py-2 text-gray-700 hover:text-brand-green font-medium">HVAC</a>
-            <a href="#career" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Career</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Contact</a>
-            <a href="#quote"
-              class="block py-3 px-4 bg-brand-green hover:bg-brand-green/90 text-white rounded-lg font-medium text-center transition duration-300">Get
-              A Quote</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+  <WebsiteLayout>
 
     <!-- Hero Section -->
     <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-24">
@@ -195,77 +138,95 @@
             <div class="w-24 h-1 bg-brand-green mx-auto rounded-full"></div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div class="group bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div
+              class="group bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div class="relative mb-6">
-                <div class="w-32 h-32 rounded-full overflow-hidden mx-auto border-4 border-brand-green shadow-lg group-hover:border-brand-green/80 transition-all duration-300">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" 
-                       alt="A.S Usmani" 
-                       class="w-full h-full object-cover">
+                <div
+                  class="w-32 h-32 rounded-full overflow-hidden mx-auto border-4 border-brand-green shadow-lg group-hover:border-brand-green/80 transition-all duration-300">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                    alt="A.S Usmani" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center shadow-lg">
+                <div
+                  class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center shadow-lg">
                   <User class="w-4 h-4 text-white" />
                 </div>
               </div>
               <h4 class="text-2xl font-bold text-gray-900 mb-2">A.S Usmani</h4>
               <p class="text-brand-green font-semibold text-lg mb-6">CEO & Founder</p>
               <div class="flex justify-center space-x-4">
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 group">
                   <Linkedin class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300 group">
                   <Facebook class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-500 hover:text-green-500 hover:bg-green-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-500 hover:text-green-500 hover:bg-green-50 transition-all duration-300 group">
                   <MessageCircle class="w-5 h-5" />
                 </a>
               </div>
             </div>
-            <div class="group bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div
+              class="group bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div class="relative mb-6">
-                <div class="w-32 h-32 rounded-full overflow-hidden mx-auto border-4 border-brand-green shadow-lg group-hover:border-brand-green/80 transition-all duration-300">
-                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" 
-                       alt="Areeb Saeed Usmani" 
-                       class="w-full h-full object-cover">
+                <div
+                  class="w-32 h-32 rounded-full overflow-hidden mx-auto border-4 border-brand-green shadow-lg group-hover:border-brand-green/80 transition-all duration-300">
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                    alt="Areeb Saeed Usmani" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center shadow-lg">
+                <div
+                  class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center shadow-lg">
                   <User class="w-4 h-4 text-white" />
                 </div>
               </div>
               <h4 class="text-2xl font-bold text-gray-900 mb-2">Areeb Saeed Usmani</h4>
               <p class="text-brand-green font-semibold text-lg mb-6">Director</p>
               <div class="flex justify-center space-x-4">
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 group">
                   <Linkedin class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300 group">
                   <Facebook class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-500 hover:text-green-500 hover:bg-green-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-500 hover:text-green-500 hover:bg-green-50 transition-all duration-300 group">
                   <MessageCircle class="w-5 h-5" />
                 </a>
               </div>
             </div>
-            <div class="group bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div
+              class="group bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div class="relative mb-6">
-                <div class="w-32 h-32 rounded-full overflow-hidden mx-auto border-4 border-brand-green shadow-lg group-hover:border-brand-green/80 transition-all duration-300">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" 
-                       alt="Suhail Saeed Usmani" 
-                       class="w-full h-full object-cover">
+                <div
+                  class="w-32 h-32 rounded-full overflow-hidden mx-auto border-4 border-brand-green shadow-lg group-hover:border-brand-green/80 transition-all duration-300">
+                  <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                    alt="Suhail Saeed Usmani" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center shadow-lg">
+                <div
+                  class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center shadow-lg">
                   <User class="w-4 h-4 text-white" />
                 </div>
               </div>
               <h4 class="text-2xl font-bold text-gray-900 mb-2">Suhail Saeed Usmani</h4>
               <p class="text-brand-green font-semibold text-lg mb-6">Project Manager</p>
               <div class="flex justify-center space-x-4">
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 group">
                   <Linkedin class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300 group">
                   <Facebook class="w-5 h-5" />
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-500 hover:text-green-500 hover:bg-green-50 transition-all duration-300 group">
+                <a href="#"
+                  class="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-600 hover:border-green-500 hover:text-green-500 hover:bg-green-50 transition-all duration-300 group">
                   <MessageCircle class="w-5 h-5" />
                 </a>
               </div>
@@ -590,87 +551,12 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div class="col-span-1 md:col-span-2">
-            <div class="flex items-center mb-4">
-              <Building class="w-8 h-8 text-brand-green mr-3" />
-              <h3 class="text-2xl font-bold">
-                <span class="text-brand-green">Al Najm</span> Al Saeed
-              </h3>
-            </div>
-            <p class="text-gray-300 mb-4">
-              Welcome to Al Najm Al Saeed Co. Ltd., where innovation drives excellence in construction, HVAC, IT
-              services, and maintenance. Our expert team delivers precise, tailored solutions to meet your needs with
-              unmatched expertise.
-            </p>
-            <div class="flex space-x-4">
-              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                <Facebook class="w-6 h-6" />
-              </a>
-              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                <Twitter class="w-6 h-6" />
-              </a>
-              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                <Linkedin class="w-6 h-6" />
-              </a>
-              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                <Instagram class="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li><a href="#home" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
-              <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About Us</a></li>
-              <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Our Services</a>
-              </li>
-              <li><a href="#hvac" class="text-gray-300 hover:text-white transition duration-300">HVAC Services</a></li>
-              <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 class="text-lg font-semibold mb-4">Our Services</h4>
-            <ul class="space-y-2 text-gray-300">
-              <li>HVAC Installation</li>
-              <li>HVAC Renovation</li>
-              <li>HVAC Maintenance</li>
-              <li>Building Construction</li>
-              <li>Interior Design</li>
-              <li>Website Development</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p class="text-gray-400">
-            © Al Najm Al Saeed Co. Ltd. 2025. All Rights Reserved.
-          </p>
-          <p class="text-gray-400 mt-2">
-            Designed & Developed by Al Najm Al Saeed Co. Ltd.
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <button v-show="showBackToTop" @click="scrollToTop"
-      class="fixed bottom-8 right-8 bg-brand-green hover:bg-brand-green/90 text-white w-12 h-12 rounded-full shadow-lg transition duration-300 flex items-center justify-center">
-      <ArrowUp class="w-6 h-6" />
-    </button>
-  </div>
+  </WebsiteLayout>
 </template>
 
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import {
-  Building,
-  Menu,
   Rocket,
   Phone,
   ChevronLeft,
@@ -692,20 +578,14 @@ import {
   Send,
   MapPin,
   Mail,
-  ArrowUp,
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
   MessageCircle
 } from 'lucide-vue-next'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
 
 // Reactive data
-const isMobileMenuOpen = ref(false)
 const currentSlide = ref(0)
-const showBackToTop = ref(false)
 
 // Slider data
 const slides = ref([
@@ -746,10 +626,6 @@ const contactForm = reactive({
 })
 
 // Methods
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value
-}
-
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % slides.value.length
 }
@@ -760,17 +636,6 @@ const prevSlide = () => {
 
 const goToSlide = (index) => {
   currentSlide.value = index
-}
-
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
-}
-
-const handleScroll = () => {
-  showBackToTop.value = window.pageYOffset > 300
 }
 
 const submitCallbackForm = () => {
@@ -797,8 +662,6 @@ const submitContactForm = () => {
 
 // Lifecycle hooks
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-
   // Auto-play slider
   const sliderInterval = setInterval(nextSlide, 5000)
 
@@ -806,10 +669,6 @@ onMounted(() => {
   onUnmounted(() => {
     clearInterval(sliderInterval)
   })
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
@@ -830,10 +689,5 @@ onUnmounted(() => {
   50% {
     transform: translateY(-20px);
   }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
 }
 </style>
