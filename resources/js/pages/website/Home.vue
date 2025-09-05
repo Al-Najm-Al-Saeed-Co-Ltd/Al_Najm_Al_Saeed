@@ -66,9 +66,11 @@
       </div>
 
       <!-- Floating Elements -->
-      <div class="absolute top-20 left-10 w-20 h-20 bg-white bg-opacity-10 rounded-full animate-float"></div>
-      <div class="absolute bottom-20 right-10 w-32 h-32 bg-white bg-opacity-5 rounded-full animate-float"
-        style="animation-delay: 2s;"></div>
+      <div class="absolute top-20 left-10 w-20 h-20 rounded-full animate-float"
+        style="background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.1;"></div>
+      <div class="absolute bottom-20 right-10 w-32 h-32 rounded-full animate-float"
+        style="animation-delay: 2s; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.05;">
+      </div>
 
     </section>
 
