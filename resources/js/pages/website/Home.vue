@@ -34,11 +34,12 @@
           <div class="order-1 lg:order-2">
             <div class="relative">
               <!-- Image Slider -->
-              <div class="image-slider-container relative overflow-hidden rounded-2xl shadow-2xl">
-                <div class="slider-wrapper flex transition-transform duration-500 ease-in-out"
+              <div class="image-slider-container relative overflow-hidden rounded-2xl shadow-2xl"
+                @mouseenter="isSliderPaused = true" @mouseleave="isSliderPaused = false">
+                <div class="slider-wrapper flex transition-transform duration-700 ease-in-out"
                   :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                   <div v-for="(slide, index) in slides" :key="index" class="slide w-full flex-shrink-0 aspect-video">
-                    <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center">
+                    <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105" loading="lazy">
                   </div>
                 </div>
 
@@ -78,7 +79,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 bg-white" :class="{ 'animate-fade-in-up': visibleSections.has('about') }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h2 class="text-4xl font-bold text-gray-900 mb-6">About Al Najm Al Saeed Co. Ltd.</h2>
@@ -242,7 +243,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
+    <section id="services" class="py-20 bg-gray-50" :class="{ 'animate-fade-in-up': visibleSections.has('services') }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h2 class="text-4xl font-bold text-gray-900 mb-6">We Provide The Best Construction, HVAC & IT Services</h2>
@@ -327,8 +328,106 @@
       </div>
     </section>
 
+    <!-- Statistics Section -->
+    <section id="statistics" class="py-20 bg-brand-green text-white" :class="{ 'animate-fade-in-up': visibleSections.has('statistics') }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="stat-item">
+            <div class="text-4xl md:text-5xl font-bold mb-2" :data-count="150">0</div>
+            <div class="text-lg md:text-xl">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="text-4xl md:text-5xl font-bold mb-2" :data-count="25">0</div>
+            <div class="text-lg md:text-xl">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="text-4xl md:text-5xl font-bold mb-2" :data-count="50">0</div>
+            <div class="text-lg md:text-xl">Expert Team Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="text-4xl md:text-5xl font-bold mb-2" :data-count="98">0</div>
+            <div class="text-lg md:text-xl">% Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white" :class="{ 'animate-fade-in-up': visibleSections.has('testimonials') }">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">What Our Clients Say</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Don't just take our word for it - hear from our satisfied clients
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="flex text-yellow-400">
+                <Star v-for="i in 5" :key="i" class="w-5 h-5 fill-current" />
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6 italic">
+              "Al Najm Al Saeed delivered exceptional HVAC services for our office building. Their team was professional, efficient, and the results exceeded our expectations."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center mr-4">
+                <User class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Ahmed Al-Rashid</h4>
+                <p class="text-sm text-gray-600">CEO, Tech Solutions Inc.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="flex text-yellow-400">
+                <Star v-for="i in 5" :key="i" class="w-5 h-5 fill-current" />
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6 italic">
+              "The construction quality and attention to detail were outstanding. They completed our project on time and within budget. Highly recommended!"
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center mr-4">
+                <User class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+                <p class="text-sm text-gray-600">Project Manager, BuildCorp</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+            <div class="flex items-center mb-6">
+              <div class="flex text-yellow-400">
+                <Star v-for="i in 5" :key="i" class="w-5 h-5 fill-current" />
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6 italic">
+              "Their IT solutions transformed our business operations. The team was knowledgeable and provided excellent ongoing support."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center mr-4">
+                <User class="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Mohammed Al-Zahra</h4>
+                <p class="text-sm text-gray-600">IT Director, Modern Enterprises</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- HVAC Section -->
-    <section id="hvac" class="py-20 bg-white">
+    <section id="hvac" class="py-20 bg-white" :class="{ 'animate-fade-in-up': visibleSections.has('hvac') }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -434,7 +533,7 @@
     </section>
 
     <!-- Career Section -->
-    <section id="career" class="py-20 bg-gray-50">
+    <section id="career" class="py-20 bg-gray-50" :class="{ 'animate-fade-in-up': visibleSections.has('career') }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h2 class="text-4xl font-bold text-gray-900 mb-6">Join Our Team</h2>
@@ -461,7 +560,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-white" :class="{ 'animate-fade-in-up': visibleSections.has('contact') }">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h2 class="text-4xl font-bold text-gray-900 mb-6">Contact Us</h2>
@@ -575,7 +674,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, onMounted, onUnmounted, nextTick } from 'vue'
 import { Head } from '@inertiajs/vue3'
 import {
   Rocket,
@@ -601,7 +700,8 @@ import {
   Mail,
   MessageCircle,
   Linkedin,
-  Facebook
+  Facebook,
+  Star
 } from 'lucide-vue-next'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -612,6 +712,8 @@ import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
 
 // Reactive data
 const currentSlide = ref(0)
+const visibleSections = ref(new Set())
+const isSliderPaused = ref(false)
 
 // Slider data
 const slides = ref([
@@ -651,11 +753,80 @@ const contactForm = reactive({
   message: ''
 })
 
-// Form errors
+// Form errors and validation
 const callbackErrors = reactive({})
 const contactErrors = reactive({})
 const isSubmittingCallback = ref(false)
 const isSubmittingContact = ref(false)
+
+// Form validation functions
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
+
+const validatePhone = (phone) => {
+  const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/
+  return phoneRegex.test(phone.replace(/\s/g, ''))
+}
+
+const validateCallbackForm = () => {
+  const errors = {}
+  
+  if (!callbackForm.name.trim()) {
+    errors.name = 'Name is required'
+  }
+  
+  if (!callbackForm.email.trim()) {
+    errors.email = 'Email is required'
+  } else if (!validateEmail(callbackForm.email)) {
+    errors.email = 'Please enter a valid email address'
+  }
+  
+  if (!callbackForm.callback_date) {
+    errors.callback_date = 'Callback date is required'
+  }
+  
+  if (!callbackForm.callback_time) {
+    errors.callback_time = 'Callback time is required'
+  }
+  
+  if (!callbackForm.message.trim()) {
+    errors.message = 'Message is required'
+  }
+  
+  return errors
+}
+
+const validateContactForm = () => {
+  const errors = {}
+  
+  if (!contactForm.first_name.trim()) {
+    errors.first_name = 'First name is required'
+  }
+  
+  if (!contactForm.last_name.trim()) {
+    errors.last_name = 'Last name is required'
+  }
+  
+  if (!contactForm.email.trim()) {
+    errors.email = 'Email is required'
+  } else if (!validateEmail(contactForm.email)) {
+    errors.email = 'Please enter a valid email address'
+  }
+  
+  if (!contactForm.phone.trim()) {
+    errors.phone = 'Phone number is required'
+  } else if (!validatePhone(contactForm.phone)) {
+    errors.phone = 'Please enter a valid phone number'
+  }
+  
+  if (!contactForm.message.trim()) {
+    errors.message = 'Message is required'
+  }
+  
+  return errors
+}
 
 // Notification system
 const { success } = useNotification()
@@ -673,6 +844,60 @@ const goToSlide = (index) => {
   currentSlide.value = index
 }
 
+// Scroll-triggered animations
+const handleIntersection = (entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      visibleSections.value.add(entry.target.id)
+      
+      // Trigger counter animation for statistics section
+      if (entry.target.id === 'statistics') {
+        animateCounters()
+      }
+    }
+  })
+}
+
+// Counter animation
+const animateCounters = () => {
+  const counters = document.querySelectorAll('.stat-item [data-count]')
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-count'))
+    const duration = 2000 // 2 seconds
+    const increment = target / (duration / 16) // 60fps
+    let current = 0
+    
+    const timer = setInterval(() => {
+      current += increment
+      if (current >= target) {
+        current = target
+        clearInterval(timer)
+      }
+      counter.textContent = Math.floor(current)
+    }, 16)
+  })
+}
+
+const setupScrollAnimations = () => {
+  const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  })
+
+  const sections = document.querySelectorAll('section[id]')
+  sections.forEach(section => observer.observe(section))
+
+  return observer
+}
+
+// Smooth scrolling
+const smoothScrollTo = (elementId) => {
+  const element = document.getElementById(elementId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 const submitCallbackForm = async () => {
   isSubmittingCallback.value = true
 
@@ -680,6 +905,14 @@ const submitCallbackForm = async () => {
   Object.keys(callbackErrors).forEach(key => {
     callbackErrors[key] = ''
   })
+
+  // Validate form
+  const errors = validateCallbackForm()
+  if (Object.keys(errors).length > 0) {
+    Object.assign(callbackErrors, errors)
+    isSubmittingCallback.value = false
+    return
+  }
 
   try {
     // Handle form submission
@@ -708,6 +941,14 @@ const submitContactForm = async () => {
     contactErrors[key] = ''
   })
 
+  // Validate form
+  const errors = validateContactForm()
+  if (Object.keys(errors).length > 0) {
+    Object.assign(contactErrors, errors)
+    isSubmittingContact.value = false
+    return
+  }
+
   try {
     // Handle form submission
     console.log('Contact form submitted:', contactForm)
@@ -728,14 +969,44 @@ const submitContactForm = async () => {
 }
 
 // Lifecycle hooks
-onMounted(() => {
-  // Auto-play slider
-  const sliderInterval = setInterval(nextSlide, 5000)
+let sliderInterval = null
+let scrollObserver = null
 
-  // Cleanup on unmount
-  onUnmounted(() => {
-    clearInterval(sliderInterval)
+onMounted(async () => {
+  await nextTick()
+  
+  // Setup scroll animations
+  scrollObserver = setupScrollAnimations()
+  
+  // Auto-play slider (pause on hover)
+  const startSlider = () => {
+    sliderInterval = setInterval(() => {
+      if (!isSliderPaused.value) {
+        nextSlide()
+      }
+    }, 5000)
+  }
+  
+  startSlider()
+  
+  // Add smooth scrolling to navigation links
+  const navLinks = document.querySelectorAll('a[href^="#"]')
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault()
+      const targetId = link.getAttribute('href').substring(1)
+      smoothScrollTo(targetId)
+    })
   })
+})
+
+onUnmounted(() => {
+  if (sliderInterval) {
+    clearInterval(sliderInterval)
+  }
+  if (scrollObserver) {
+    scrollObserver.disconnect()
+  }
 })
 </script>
 
@@ -747,14 +1018,64 @@ onMounted(() => {
 }
 
 @keyframes float {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-20px);
   }
+}
+
+/* Scroll-triggered animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Service card hover effects */
+.service-card {
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(61, 153, 112, 0.2), 0 10px 10px -5px rgba(61, 153, 112, 0.1);
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Form validation styles */
+.form-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-success {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 </style>

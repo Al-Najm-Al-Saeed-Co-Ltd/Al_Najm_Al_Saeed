@@ -7,7 +7,7 @@ Route::get('/', function () {
     return Inertia::render('website/Home');
 })->name('home');
 
-Route::get('admin/dashboard', function () {
+Route::get('admin/', function () {
     return Inertia::render('admin/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
