@@ -1,5 +1,6 @@
 <template>
   <WebsiteLayout>
+
     <Head title="Home" />
 
     <!-- Hero Section -->
@@ -69,7 +70,8 @@
       <!-- Floating Elements -->
       <div class="absolute top-16 sm:top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full animate-float"
         style="background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.1;"></div>
-      <div class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full animate-float"
+      <div
+        class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full animate-float"
         style="animation-delay: 2s; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.05;">
       </div>
 
@@ -405,7 +407,7 @@
                 <div class="grid gap-2">
                   <Label for="callback_time">Call Back Time</Label>
                   <Input v-model="callbackForm.callback_time" type="time" id="callback_time" name="callback_time"
-class="mt-1 block w-full" required />
+                    class="mt-1 block w-full" required />
                 </div>
               </div>
               <div class="grid gap-2">
