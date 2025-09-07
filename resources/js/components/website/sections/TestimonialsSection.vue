@@ -10,62 +10,26 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+        <div 
+          v-for="testimonial in testimonials" 
+          :key="testimonial.id"
+          class="bg-gray-50 p-8 rounded-2xl shadow-lg"
+        >
           <div class="flex items-center mb-6">
             <div class="flex text-yellow-400">
               <Star v-for="i in 5" :key="i" class="w-5 h-5 fill-current" />
             </div>
           </div>
           <p class="text-gray-600 mb-6 italic">
-            "Al Najm Al Saeed delivered exceptional HVAC services for our office building. Their team was professional, efficient, and the results exceeded our expectations."
+            "{{ testimonial.quote }}"
           </p>
           <div class="flex items-center">
             <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center mr-4">
               <User class="w-6 h-6 text-white" />
             </div>
             <div>
-              <h4 class="font-semibold text-gray-900">Ahmed Al-Rashid</h4>
-              <p class="text-sm text-gray-600">CEO, Tech Solutions Inc.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-          <div class="flex items-center mb-6">
-            <div class="flex text-yellow-400">
-              <Star v-for="i in 5" :key="i" class="w-5 h-5 fill-current" />
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6 italic">
-            "The construction quality and attention to detail were outstanding. They completed our project on time and within budget. Highly recommended!"
-          </p>
-          <div class="flex items-center">
-            <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center mr-4">
-              <User class="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
-              <p class="text-sm text-gray-600">Project Manager, BuildCorp</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-          <div class="flex items-center mb-6">
-            <div class="flex text-yellow-400">
-              <Star v-for="i in 5" :key="i" class="w-5 h-5 fill-current" />
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6 italic">
-            "Their IT solutions transformed our business operations. The team was knowledgeable and provided excellent ongoing support."
-          </p>
-          <div class="flex items-center">
-            <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center mr-4">
-              <User class="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-900">Mohammed Al-Zahra</h4>
-              <p class="text-sm text-gray-600">IT Director, Modern Enterprises</p>
+              <h4 class="font-semibold text-gray-900">{{ testimonial.name }}</h4>
+              <p class="text-sm text-gray-600">{{ testimonial.position }}</p>
             </div>
           </div>
         </div>
@@ -84,6 +48,28 @@ const props = defineProps({
     default: false
   }
 })
+
+// Testimonials data array
+const testimonials = [
+  {
+    id: 1,
+    quote: "Al Najm Al Saeed delivered exceptional HVAC services for our office building. Their team was professional, efficient, and the results exceeded our expectations.",
+    name: "Ahmed Al-Rashid",
+    position: "CEO, Tech Solutions Inc."
+  },
+  {
+    id: 2,
+    quote: "The construction quality and attention to detail were outstanding. They completed our project on time and within budget. Highly recommended!",
+    name: "Sarah Johnson",
+    position: "Project Manager, BuildCorp"
+  },
+  {
+    id: 3,
+    quote: "Their IT solutions transformed our business operations. The team was knowledgeable and provided excellent ongoing support.",
+    name: "Mohammed Al-Zahra",
+    position: "IT Director, Modern Enterprises"
+  }
+]
 </script>
 
 <style scoped>

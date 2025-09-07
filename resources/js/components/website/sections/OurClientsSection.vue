@@ -17,83 +17,22 @@
 
       <!-- Client Logos Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
-        <div :class="['transition-all duration-1000', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
+        <div 
+          v-for="(client, index) in clients" 
+          :key="client.id"
+          :class="[
+            'transition-all duration-1000',
+            `delay-${index * 100}`,
+            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          ]" 
+          class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+        >
           <div class="text-center">
-            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building class="w-8 h-8 text-blue-600" />
+            <div :class="`w-16 h-16 ${client.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`">
+              <component :is="client.icon" :class="`w-8 h-8 ${client.iconColor}`" />
             </div>
-            <h3 class="font-semibold text-gray-900">Tech Solutions Inc.</h3>
-            <p class="text-sm text-gray-600">Technology</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-100', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building2 class="w-8 h-8 text-green-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">BuildCorp</h3>
-            <p class="text-sm text-gray-600">Construction</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-200', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building2 class="w-8 h-8 text-purple-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">Modern Enterprises</h3>
-            <p class="text-sm text-gray-600">Manufacturing</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-300', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building class="w-8 h-8 text-orange-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">Healthcare Plus</h3>
-            <p class="text-sm text-gray-600">Healthcare</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-400', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building2 class="w-8 h-8 text-red-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">Retail Group</h3>
-            <p class="text-sm text-gray-600">Retail</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-500', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building class="w-8 h-8 text-indigo-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">Finance Corp</h3>
-            <p class="text-sm text-gray-600">Finance</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-600', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building2 class="w-8 h-8 text-teal-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">Education Hub</h3>
-            <p class="text-sm text-gray-600">Education</p>
-          </div>
-        </div>
-
-        <div :class="['transition-all duration-1000 delay-700', visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10']" class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Building class="w-8 h-8 text-pink-600" />
-            </div>
-            <h3 class="font-semibold text-gray-900">Hospitality Group</h3>
-            <p class="text-sm text-gray-600">Hospitality</p>
+            <h3 class="font-semibold text-gray-900">{{ client.name }}</h3>
+            <p class="text-sm text-gray-600">{{ client.industry }}</p>
           </div>
         </div>
       </div>
@@ -112,4 +51,73 @@ const props = defineProps({
     default: false
   }
 })
+
+// Clients data array
+const clients = [
+  {
+    id: 1,
+    icon: Building,
+    bgColor: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    name: 'Tech Solutions Inc.',
+    industry: 'Technology'
+  },
+  {
+    id: 2,
+    icon: Building2,
+    bgColor: 'bg-green-100',
+    iconColor: 'text-green-600',
+    name: 'BuildCorp',
+    industry: 'Construction'
+  },
+  {
+    id: 3,
+    icon: Building2,
+    bgColor: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+    name: 'Modern Enterprises',
+    industry: 'Manufacturing'
+  },
+  {
+    id: 4,
+    icon: Building,
+    bgColor: 'bg-orange-100',
+    iconColor: 'text-orange-600',
+    name: 'Healthcare Plus',
+    industry: 'Healthcare'
+  },
+  {
+    id: 5,
+    icon: Building2,
+    bgColor: 'bg-red-100',
+    iconColor: 'text-red-600',
+    name: 'Retail Group',
+    industry: 'Retail'
+  },
+  {
+    id: 6,
+    icon: Building,
+    bgColor: 'bg-indigo-100',
+    iconColor: 'text-indigo-600',
+    name: 'Finance Corp',
+    industry: 'Finance'
+  },
+  {
+    id: 7,
+    icon: Building2,
+    bgColor: 'bg-teal-100',
+    iconColor: 'text-teal-600',
+    name: 'Education Hub',
+    industry: 'Education'
+  },
+  {
+    id: 8,
+    icon: Building,
+    bgColor: 'bg-pink-100',
+    iconColor: 'text-pink-600',
+    name: 'Hospitality Group',
+    industry: 'Hospitality'
+  }
+]
 </script>
+
