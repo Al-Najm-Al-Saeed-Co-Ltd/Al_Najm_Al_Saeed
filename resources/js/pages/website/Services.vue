@@ -26,7 +26,7 @@
 import { Head, Link } from '@inertiajs/vue3'
 import { contact, home } from '@/routes/website'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
-import {
+import { 
   ServicesHeroSection,
   ServicesGridSection,
   WhyChooseUsSection,

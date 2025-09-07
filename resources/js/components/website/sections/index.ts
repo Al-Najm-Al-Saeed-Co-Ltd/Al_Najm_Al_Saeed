@@ -22,6 +22,7 @@ export { default as ContactCTASection } from './ContactCTASection.vue'
 export { default as ContactHeroSection } from './ContactHeroSection.vue'
 export { default as ServicesHeroSection } from './ServicesHeroSection.vue'
 export { default as FAQHeroSection } from './FAQHeroSection.vue'
+export { default as HVACHeroSection } from './HVACHeroSection.vue'
 
 // Generic reusable sections
 export { default as MapSection } from './MapSection.vue'
@@ -32,3 +33,9 @@ export { default as ProcessSection } from './ProcessSection.vue'
 export { default as IndustriesSection } from './IndustriesSection.vue'
 export { default as CTASection } from './CTASection.vue'
 export { default as HelpCTASection } from './HelpCTASection.vue'
+
+// HVAC sections
+export { default as HVACServicesSection } from './HVACServicesSection.vue'
+export { default as HVACSystemsSection } from './HVACSystemsSection.vue'
+export { default as HVACWhyChooseUsSection } from './HVACWhyChooseUsSection.vue'
+export { default as HVACPricingSection } from './HVACPricingSection.vue'
