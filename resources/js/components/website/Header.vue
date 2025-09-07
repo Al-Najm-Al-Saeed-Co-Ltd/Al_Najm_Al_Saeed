@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-4 left-4 right-4 z-50 mx-auto max-w-7xl">
+  <nav class="fixed top-4 left-4 right-4 z-50">
     <div class="backdrop-blur-xl bg-white/70 rounded-2xl shadow-2xl border border-white/20">
       <div class="px-6 py-2">
         <div class="flex justify-between items-center">
@@ -59,8 +59,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
 
 const navigationItems = [
-  { href: '#home', label: 'Home', isButton: false },
-  { href: '#about', label: 'About', isButton: false },
+  { href: '/', label: 'Home', isButton: false },
+  { href: '/about', label: 'About', isButton: false },
   { href: '#services', label: 'Services', isButton: false },
   { href: '#hvac', label: 'HVAC', isButton: false },
   { href: '#career', label: 'Career', isButton: false },
