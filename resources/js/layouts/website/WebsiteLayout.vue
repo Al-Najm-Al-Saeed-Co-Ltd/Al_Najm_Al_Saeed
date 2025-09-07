@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-50 custom-scrollbar">
+  <div class="bg-gray-50 custom-scrollbar overflow-x-hidden">
     <Header />
     <main>
       <slot />
