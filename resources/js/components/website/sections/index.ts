@@ -6,3 +6,11 @@ export { default as TestimonialsSection } from './TestimonialsSection.vue'
 export { default as HVACSection } from './HVACSection.vue'
 export { default as CareerSection } from './CareerSection.vue'
 export { default as ContactSection } from './ContactSection.vue'
+
+// About page specific sections
+export { default as AboutHeroSection } from './AboutHeroSection.vue'
+export { default as CompanyStorySection } from './CompanyStorySection.vue'
+export { default as MissionVisionSection } from './MissionVisionSection.vue'
+export { default as TeamSection } from './TeamSection.vue'
+export { default as ValuesSection } from './ValuesSection.vue'
+export { default as ContactCTASection } from './ContactCTASection.vue'

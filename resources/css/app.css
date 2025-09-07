@@ -29,6 +29,10 @@
     --color-secondary: var(--secondary);
     --color-secondary-foreground: var(--secondary-foreground);
 
+    --color-brand-green: var(--brand-green);
+    --color-brand-green-dark: var(--brand-green-dark);
+    --color-brand-green-darker: var(--brand-green-darker);
+
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);
 

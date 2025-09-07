@@ -1,15 +1,21 @@
 <template>
   <WebsiteLayout>
-    <Head title="Home" />
+    <Head title="About Us" />
 
     <!-- Hero Section -->
-    <HeroSection :slides="slides" />
+    <AboutHeroSection />
 
-    <!-- About Section -->
-    <AboutSection :visible="visibleSections.has('about')" />
+    <!-- Company Story Section -->
+    <CompanyStorySection :visible="visibleSections.has('story')" />
 
-    <!-- Services Section -->
-    <ServicesSection :visible="visibleSections.has('services')" />
+    <!-- Mission & Vision Section -->
+    <MissionVisionSection :visible="visibleSections.has('mission')" />
+
+    <!-- Team Section -->
+    <TeamSection :visible="visibleSections.has('team')" />
+
+    <!-- Values Section -->
+    <ValuesSection :visible="visibleSections.has('values')" />
 
     <!-- Statistics Section -->
     <StatisticsSection :visible="visibleSections.has('statistics')" />
@@ -17,17 +23,8 @@
     <!-- Testimonials Section -->
     <TestimonialsSection :visible="visibleSections.has('testimonials')" />
 
-    <!-- HVAC Section -->
-    <HVACSection :visible="visibleSections.has('hvac')" />
-
-    <!-- Career Section -->
-    <CareerSection :visible="visibleSections.has('career')" />
-
-    <!-- Team Section -->
-    <TeamSection :visible="visibleSections.has('team')" />
-
-    <!-- Contact Section -->
-    <ContactSection :visible="visibleSections.has('contact')" />
+    <!-- Contact CTA Section -->
+    <ContactCTASection :visible="visibleSections.has('contact')" />
 
   </WebsiteLayout>
 </template>
@@ -36,40 +33,19 @@
 import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { Head } from '@inertiajs/vue3'
 import {
-  HeroSection,
-  AboutSection,
-  ServicesSection,
+  AboutHeroSection,
+  CompanyStorySection,
+  MissionVisionSection,
+  TeamSection,
+  ValuesSection,
   StatisticsSection,
   TestimonialsSection,
-  HVACSection,
-  CareerSection,
-  TeamSection,
-  ContactSection
+  ContactCTASection
 } from '@/components/website/sections'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
 
 // Reactive data
 const visibleSections = ref(new Set())
-
-// Slider data for HeroSection
-const slides = ref([
-  {
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'Construction Site'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'HVAC System'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'IT Services'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'Maintenance Work'
-  }
-])
 
 // Scroll-triggered animations
 const handleIntersection = (entries) => {
@@ -128,5 +104,5 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Home page specific styles - most styles are now in individual section components */
+/* About page specific styles - most styles are now in individual section components */
 </style>
