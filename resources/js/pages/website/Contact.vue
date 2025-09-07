@@ -51,32 +51,44 @@
             </div>
           </div>
 
-          <!-- Right Column - Contact Info Cards -->
-          <div class="order-1 lg:order-2">
-            <div class="grid grid-cols-1 gap-6">
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Phone class="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 class="text-white font-semibold text-lg mb-2">Phone</h3>
-                <p class="text-gray-200 text-sm">+966 XXXXXXXXX</p>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Mail class="w-6 h-6 text-green-600" />
-                </div>
-                <h3 class="text-white font-semibold text-lg mb-2">Email</h3>
-                <p class="text-gray-200 text-sm">info@alnajmalsaeed.com</p>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <MapPin class="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 class="text-white font-semibold text-lg mb-2">Location</h3>
-                <p class="text-gray-200 text-sm">Riyadh, Saudi Arabia</p>
-              </div>
-            </div>
-          </div>
+           <!-- Right Column - Contact Info Cards -->
+           <div class="order-1 lg:order-2">
+             <div class="grid grid-cols-1 gap-4">
+               <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                 <div class="flex items-center">
+                   <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                     <Phone class="w-5 h-5 text-blue-600" />
+                   </div>
+                   <div class="text-left">
+                     <h3 class="text-white font-semibold text-xl">Phone</h3>
+                     <p class="text-gray-200 text-base">+966 XXXXXXXXX</p>
+                   </div>
+                 </div>
+               </div>
+               <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                 <div class="flex items-center">
+                   <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                     <Mail class="w-5 h-5 text-green-600" />
+                   </div>
+                   <div class="text-left">
+                     <h3 class="text-white font-semibold text-xl">Email</h3>
+                     <p class="text-gray-200 text-base">info@alnajmalsaeed.com</p>
+                   </div>
+                 </div>
+               </div>
+               <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300">
+                 <div class="flex items-center">
+                   <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                     <MapPin class="w-5 h-5 text-purple-600" />
+                   </div>
+                   <div class="text-left">
+                     <h3 class="text-white font-semibold text-xl">Location</h3>
+                     <p class="text-gray-200 text-base">Riyadh, Saudi Arabia</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
         </div>
       </div>
     </section>
@@ -209,23 +221,24 @@
               </div>
             </div>
 
-            <!-- Emergency Contact -->
-            <div class="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-8 text-white">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                  <AlertTriangle class="w-6 h-6 text-white" />
-                </div>
-                <h3 class="text-2xl font-bold">Emergency Service</h3>
-              </div>
-              <p class="text-white/90 mb-4">
-                Need immediate assistance? Our emergency team is available 24/7 for urgent HVAC and electrical issues.
-              </p>
-              <a href="tel:+966XXXXXXXXX"
-                class="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-                <Phone class="w-5 h-5 mr-2" />
-                Call Emergency Line
-              </a>
-            </div>
+             <!-- Emergency Contact -->
+             <div class="rounded-2xl p-8 shadow-lg border-2" style="background-color: #dc2626; border-color: #b91c1c;">
+               <div class="flex items-center mb-4">
+                 <div class="w-12 h-12 rounded-xl flex items-center justify-center mr-4" style="background-color: rgba(255, 255, 255, 0.2);">
+                   <AlertTriangle class="w-6 h-6" style="color: white;" />
+                 </div>
+                 <h3 class="text-2xl font-bold" style="color: white;">Emergency Service</h3>
+               </div>
+               <p class="mb-4" style="color: white;">
+                 Need immediate assistance? Our emergency team is available 24/7 for urgent HVAC and electrical issues.
+               </p>
+               <a href="tel:+966XXXXXXXXX"
+                 class="inline-flex items-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md"
+                 style="background-color: white; color: #dc2626;">
+                 <Phone class="w-5 h-5 mr-2" />
+                 Call Emergency Line
+               </a>
+             </div>
           </div>
         </div>
       </div>
