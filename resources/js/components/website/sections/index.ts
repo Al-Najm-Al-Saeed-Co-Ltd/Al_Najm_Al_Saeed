@@ -5,6 +5,8 @@ export { default as StatisticsSection } from './StatisticsSection.vue'
 export { default as TestimonialsSection } from './TestimonialsSection.vue'
 export { default as CareerSection } from './CareerSection.vue'
 export { default as ContactSection } from './ContactSection.vue'
+export { default as ContactFormSection } from './ContactFormSection.vue'
+export { default as FAQSection } from './FAQSection.vue'
 
 // About page specific sections
 export { default as AboutHeroSection } from './AboutHeroSection.vue'
