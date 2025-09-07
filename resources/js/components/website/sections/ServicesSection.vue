@@ -10,75 +10,17 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-        <!-- HVAC Systems -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-          <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-            <Snowflake class="w-8 h-8 text-blue-600" />
+        <div 
+          v-for="service in services" 
+          :key="service.id"
+          class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300"
+        >
+          <div :class="`w-16 h-16 ${service.bgColor} rounded-lg flex items-center justify-center mb-6`">
+            <component :is="service.icon" :class="`w-8 h-8 ${service.iconColor}`" />
           </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">HVAC Systems</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">{{ service.title }}</h3>
           <p class="text-gray-600">
-            Providing expert HVAC solutions for residential and commercial spaces, focusing on efficient air
-            conditioning, heating, and ventilation systems to ensure optimal indoor climate control.
-          </p>
-        </div>
-
-        <!-- Building Construction -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-          <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-            <HardHat class="w-8 h-8 text-green-600" />
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Building Construction</h3>
-          <p class="text-gray-600">
-            Delivering comprehensive building construction services, from initial planning to final finishes, ensuring
-            quality, safety, and durability for residential, commercial, and industrial projects.
-          </p>
-        </div>
-
-        <!-- Interior Design -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-          <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-            <Paintbrush class="w-8 h-8 text-purple-600" />
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Interior Design</h3>
-          <p class="text-gray-600">
-            Creating unique, functional interior spaces that reflect client personalities and needs, combining
-            aesthetic appeal with practical design for residential and commercial environments.
-          </p>
-        </div>
-
-        <!-- Electro-Mechanical Works -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-          <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
-            <Zap class="w-8 h-8 text-orange-600" />
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Electro-Mechanical Works</h3>
-          <p class="text-gray-600">
-            Specializing in electro-mechanical installations, including electrical and plumbing systems, providing
-            reliable, safe, and efficient solutions for diverse residential and commercial needs.
-          </p>
-        </div>
-
-        <!-- Shades -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-          <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mb-6">
-            <Umbrella class="w-8 h-8 text-yellow-600" />
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Shades</h3>
-          <p class="text-gray-600">
-            Offering innovative shading solutions, from retractable awnings to custom shade structures, designed to
-            enhance outdoor comfort and protect against harsh weather conditions.
-          </p>
-        </div>
-
-        <!-- Website Development -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-          <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-            <Laptop class="w-8 h-8 text-indigo-600" />
-          </div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Website Development</h3>
-          <p class="text-gray-600">
-            Crafting user-friendly, modern websites with responsive design, tailored functionality, and SEO
-            optimization, aimed at enhancing client visibility and engagement online.
+            {{ service.description }}
           </p>
         </div>
       </div>
@@ -96,6 +38,58 @@ const props = defineProps({
     default: false
   }
 })
+
+// Services data array
+const services = [
+  {
+    id: 1,
+    icon: Snowflake,
+    bgColor: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    title: 'HVAC Systems',
+    description: 'Providing expert HVAC solutions for residential and commercial spaces, focusing on efficient air conditioning, heating, and ventilation systems to ensure optimal indoor climate control.'
+  },
+  {
+    id: 2,
+    icon: HardHat,
+    bgColor: 'bg-green-100',
+    iconColor: 'text-green-600',
+    title: 'Building Construction',
+    description: 'Delivering comprehensive building construction services, from initial planning to final finishes, ensuring quality, safety, and durability for residential, commercial, and industrial projects.'
+  },
+  {
+    id: 3,
+    icon: Paintbrush,
+    bgColor: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+    title: 'Interior Design',
+    description: 'Creating unique, functional interior spaces that reflect client personalities and needs, combining aesthetic appeal with practical design for residential and commercial environments.'
+  },
+  {
+    id: 4,
+    icon: Zap,
+    bgColor: 'bg-orange-100',
+    iconColor: 'text-orange-600',
+    title: 'Electro-Mechanical Works',
+    description: 'Specializing in electro-mechanical installations, including electrical and plumbing systems, providing reliable, safe, and efficient solutions for diverse residential and commercial needs.'
+  },
+  {
+    id: 5,
+    icon: Umbrella,
+    bgColor: 'bg-yellow-100',
+    iconColor: 'text-yellow-600',
+    title: 'Shades',
+    description: 'Offering innovative shading solutions, from retractable awnings to custom shade structures, designed to enhance outdoor comfort and protect against harsh weather conditions.'
+  },
+  {
+    id: 6,
+    icon: Laptop,
+    bgColor: 'bg-indigo-100',
+    iconColor: 'text-indigo-600',
+    title: 'Website Development',
+    description: 'Crafting user-friendly, modern websites with responsive design, tailored functionality, and SEO optimization, aimed at enhancing client visibility and engagement online.'
+  }
+]
 </script>
 
 <style scoped>
