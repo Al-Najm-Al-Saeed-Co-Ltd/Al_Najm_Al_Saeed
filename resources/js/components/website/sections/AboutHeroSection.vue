@@ -49,33 +49,53 @@
 
         </div>
 
-        <!-- Right Column - Image -->
+        <!-- Right Column - Company Highlights -->
         <div class="order-1 lg:order-2">
           <div class="relative">
-            <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Al Najm Al Saeed team working on construction project"
-                class="w-full h-96 sm:h-[500px] object-cover object-center transition-transform duration-300 hover:scale-105"
-                loading="lazy"
-              />
+            <div class="grid grid-cols-2 gap-6">
+              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Award class="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 class="text-white font-semibold text-sm">15+ Years</h3>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
+                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle class="w-6 h-6 text-green-600" />
+                </div>
+                <h3 class="text-white font-semibold text-sm">150+ Projects</h3>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Heart class="w-6 h-6 text-purple-600" />
+                </div>
+                <h3 class="text-white font-semibold text-sm">98% Satisfaction</h3>
+              </div>
+              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
+                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Shield class="w-6 h-6 text-orange-600" />
+                </div>
+                <h3 class="text-white font-semibold text-sm">Quality Assured</h3>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Floating Elements (without animation) -->
-    <div class="absolute top-16 sm:top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full"
+    <!-- Floating Elements -->
+    <div class="absolute top-16 sm:top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full animate-float"
       style="background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.1;"></div>
-    <div class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full"
-      style="background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.05;"></div>
+    <div
+      class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full animate-float"
+      style="animation-delay: 2s; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.05;">
+    </div>
   </section>
 </template>
 
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import { Phone, BookOpen } from 'lucide-vue-next'
+import { Phone, BookOpen, Award, CheckCircle, Heart, Shield } from 'lucide-vue-next'
 import { home, contact } from '@/routes/website'
 </script>
 
