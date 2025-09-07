@@ -50,7 +50,7 @@
                 class="bg-white text-brand-green px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition duration-300 text-center flex items-center justify-center shadow-lg hover:shadow-xl">
                 <MessageCircle class="w-5 h-5 mr-2" />Send Message
               </a>
-              <a href="tel:+966XXXXXXXXX"
+              <a href="tel:+966536161198"
                 class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-brand-green transition duration-300 text-center flex items-center justify-center shadow-lg hover:shadow-xl">
                 <Phone class="w-5 h-5 mr-2" />Call Now
               </a>
@@ -66,8 +66,8 @@
                     <Phone class="w-5 h-5 text-blue-600" />
                   </div>
                   <div class="text-left">
-                    <h3 class="text-white font-semibold text-xl">Phone</h3>
-                    <p class="text-gray-200 text-base">+966 XXXXXXXXX</p>
+                    <h3 class="text-white font-semibold text-xl">Call Us</h3>
+                    <p class="text-gray-200 text-base">+966 (53) 616-1198</p>
                   </div>
                 </div>
               </div>
@@ -77,8 +77,8 @@
                     <Mail class="w-5 h-5 text-green-600" />
                   </div>
                   <div class="text-left">
-                    <h3 class="text-white font-semibold text-xl">Email</h3>
-                    <p class="text-gray-200 text-base">info@alnajmalsaeed.com</p>
+                    <h3 class="text-white font-semibold text-xl">Email Us</h3>
+                    <p class="text-gray-200 text-base">info@alsaeedstar.com</p>
                   </div>
                 </div>
               </div>
@@ -88,8 +88,8 @@
                     <MapPin class="w-5 h-5 text-purple-600" />
                   </div>
                   <div class="text-left">
-                    <h3 class="text-white font-semibold text-xl">Location</h3>
-                    <p class="text-gray-200 text-base">Riyadh, Saudi Arabia</p>
+                    <h3 class="text-white font-semibold text-xl">Our Office</h3>
+                    <p class="text-gray-200 text-base">Prince Abdulaziz bin Musaed bin Julawi 12628</p>
                   </div>
                 </div>
               </div>
@@ -186,20 +186,16 @@
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900">Office Hours</h3>
               </div>
-              <div class="space-y-3">
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Monday - Friday</span>
-                  <span class="font-semibold text-gray-900">8:00 AM - 6:00 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Saturday</span>
-                  <span class="font-semibold text-gray-900">9:00 AM - 4:00 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-600">Sunday</span>
-                  <span class="font-semibold text-gray-900">Closed</span>
-                </div>
-              </div>
+               <div class="space-y-3">
+                 <div class="flex justify-between">
+                   <span class="text-gray-600">Sunday - Thursday</span>
+                   <span class="font-semibold text-gray-900">8:00 AM - 5:00 PM</span>
+                 </div>
+                 <div class="flex justify-between">
+                   <span class="text-gray-600">Friday - Saturday</span>
+                   <span class="font-semibold text-gray-900">Closed</span>
+                 </div>
+               </div>
             </div>
 
             <!-- Quick Contact -->
@@ -211,27 +207,27 @@
                 <h3 class="text-2xl font-bold text-gray-900">Quick Contact</h3>
               </div>
               <div class="space-y-4">
-                <div class="flex items-center">
-                  <Phone class="w-5 h-5 text-brand-green mr-3" />
-                  <div>
-                    <p class="font-semibold text-gray-900">Phone</p>
-                    <p class="text-gray-600">+966 XXXXXXXXX</p>
-                  </div>
-                </div>
-                <div class="flex items-center">
-                  <Mail class="w-5 h-5 text-brand-green mr-3" />
-                  <div>
-                    <p class="font-semibold text-gray-900">Email</p>
-                    <p class="text-gray-600">info@alnajmalsaeed.com</p>
-                  </div>
-                </div>
-                <div class="flex items-center">
-                  <MapPin class="w-5 h-5 text-brand-green mr-3" />
-                  <div>
-                    <p class="font-semibold text-gray-900">Address</p>
-                    <p class="text-gray-600">Riyadh, Saudi Arabia</p>
-                  </div>
-                </div>
+                 <div class="flex items-center">
+                   <Phone class="w-5 h-5 text-brand-green mr-3" />
+                   <div>
+                     <p class="font-semibold text-gray-900">Call Us</p>
+                     <p class="text-gray-600">+966 (53) 616-1198</p>
+                   </div>
+                 </div>
+                 <div class="flex items-center">
+                   <Mail class="w-5 h-5 text-brand-green mr-3" />
+                   <div>
+                     <p class="font-semibold text-gray-900">Email Us</p>
+                     <p class="text-gray-600">info@alsaeedstar.com</p>
+                   </div>
+                 </div>
+                 <div class="flex items-center">
+                   <MapPin class="w-5 h-5 text-brand-green mr-3" />
+                   <div>
+                     <p class="font-semibold text-gray-900">Our Office</p>
+                     <p class="text-gray-600">Prince Abdulaziz bin Musaed bin Julawi 12628</p>
+                   </div>
+                 </div>
               </div>
             </div>
 
@@ -247,12 +243,12 @@
               <p class="mb-4" style="color: white;">
                 Need immediate assistance? Our emergency team is available 24/7 for urgent HVAC and electrical issues.
               </p>
-              <a href="tel:+966XXXXXXXXX"
-                class="inline-flex items-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md"
-                style="background-color: white; color: #dc2626;">
-                <Phone class="w-5 h-5 mr-2" />
-                Call Emergency Line
-              </a>
+               <a href="tel:+966536161198"
+                 class="inline-flex items-center px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md"
+                 style="background-color: white; color: #dc2626;">
+                 <Phone class="w-5 h-5 mr-2" />
+                 Call Emergency Line
+               </a>
             </div>
           </div>
         </div>
