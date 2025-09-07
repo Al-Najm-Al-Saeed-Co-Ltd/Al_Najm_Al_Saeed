@@ -17,9 +17,6 @@
     <!-- Testimonials Section -->
     <TestimonialsSection :visible="visibleSections.has('testimonials')" />
 
-    <!-- HVAC Section -->
-    <HVACSection :visible="visibleSections.has('hvac')" />
-
     <!-- Career Section -->
     <CareerSection :visible="visibleSections.has('career')" />
 
@@ -41,7 +38,6 @@ import {
   ServicesSection,
   StatisticsSection,
   TestimonialsSection,
-  HVACSection,
   CareerSection,
   TeamSection,
   ContactSection

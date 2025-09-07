@@ -3,7 +3,6 @@ export { default as AboutSection } from './AboutSection.vue'
 export { default as ServicesSection } from './ServicesSection.vue'
 export { default as StatisticsSection } from './StatisticsSection.vue'
 export { default as TestimonialsSection } from './TestimonialsSection.vue'
-export { default as HVACSection } from './HVACSection.vue'
 export { default as CareerSection } from './CareerSection.vue'
 export { default as ContactSection } from './ContactSection.vue'
 

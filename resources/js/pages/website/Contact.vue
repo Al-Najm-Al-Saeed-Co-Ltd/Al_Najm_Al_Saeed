@@ -92,7 +92,9 @@
                   </div>
                   <div class="text-left">
                     <h3 class="text-white font-semibold text-xl">Our Office</h3>
-                    <a href="https://maps.app.goo.gl/YmkdUbSnbZJiUcQP6" target="_blank" class="text-gray-200 text-base hover:text-white transition-colors duration-200">Prince Abdulaziz bin Musaed bin Julawi 12628</a>
+                    <a href="https://maps.app.goo.gl/YmkdUbSnbZJiUcQP6" target="_blank"
+                      class="text-gray-200 text-base hover:text-white transition-colors duration-200">Prince Abdulaziz
+                      bin Musaed bin Julawi 12628</a>
                   </div>
                 </div>
               </div>
@@ -226,13 +228,15 @@
                       class="text-gray-600 hover:text-brand-green transition-colors duration-200">info@alsaeedstar.com</a>
                   </div>
                 </div>
-                 <div class="flex items-center">
-                   <MapPin class="w-5 h-5 text-brand-green mr-3" />
-                   <div>
-                     <p class="font-semibold text-gray-900">Our Office</p>
-                     <a href="https://maps.app.goo.gl/YmkdUbSnbZJiUcQP6" target="_blank" class="text-gray-600 hover:text-brand-green transition-colors duration-200">Prince Abdulaziz bin Musaed bin Julawi 12628</a>
-                   </div>
-                 </div>
+                <div class="flex items-center">
+                  <MapPin class="w-5 h-5 text-brand-green mr-3" />
+                  <div>
+                    <p class="font-semibold text-gray-900">Our Office</p>
+                    <a href="https://maps.app.goo.gl/YmkdUbSnbZJiUcQP6" target="_blank"
+                      class="text-gray-600 hover:text-brand-green transition-colors duration-200">Prince Abdulaziz bin
+                      Musaed bin Julawi 12628</a>
+                  </div>
+                </div>
               </div>
             </div>
 
