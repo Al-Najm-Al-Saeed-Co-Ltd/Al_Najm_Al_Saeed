@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import { Head } from '@inertiajs/vue3'
 import {
   AboutHeroSection,
@@ -47,64 +47,14 @@ import {
   ContactCTASection
 } from '@/components/website/sections'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
+import { useScrollAnimations } from '@/composables/useScrollAnimations'
 
-// Reactive data
-const visibleSections = ref(new Set())
-
-// Scroll-triggered animations
-const handleIntersection = (entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      visibleSections.value.add(entry.target.id)
-    }
-  })
-}
-
-const setupScrollAnimations = () => {
-  const observer = new IntersectionObserver(handleIntersection, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  })
-
-  const sections = document.querySelectorAll('section[id]')
-  sections.forEach(section => observer.observe(section))
-
-  return observer
-}
-
-// Smooth scrolling
-const smoothScrollTo = (elementId) => {
-  const element = document.getElementById(elementId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
+// Use scroll animations composable
+const { visibleSections, initialize, cleanup } = useScrollAnimations()
 
 // Lifecycle hooks
-let scrollObserver = null
-
-onMounted(async () => {
-  await nextTick()
-  
-  // Setup scroll animations
-  scrollObserver = setupScrollAnimations()
-  
-  // Add smooth scrolling to navigation links
-  const navLinks = document.querySelectorAll('a[href^="#"]')
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault()
-      const targetId = link.getAttribute('href').substring(1)
-      smoothScrollTo(targetId)
-    })
-  })
-})
-
-onUnmounted(() => {
-  if (scrollObserver) {
-    scrollObserver.disconnect()
-  }
-})
+onMounted(initialize)
+onUnmounted(cleanup)
 </script>
 
 <style scoped>
