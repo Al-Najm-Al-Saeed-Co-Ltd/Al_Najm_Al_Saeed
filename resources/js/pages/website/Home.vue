@@ -14,6 +14,9 @@
     <!-- Statistics Section -->
     <StatisticsSection :visible="visibleSections.has('statistics')" />
 
+    <!-- Our Clients Section -->
+    <OurClientsSection :visible="visibleSections.has('clients')" />
+
     <!-- Testimonials Section -->
     <TestimonialsSection :visible="visibleSections.has('testimonials')" />
 
@@ -37,6 +40,7 @@ import {
   AboutSection,
   ServicesSection,
   StatisticsSection,
+  OurClientsSection,
   TestimonialsSection,
   CareerSection,
   TeamSection,
