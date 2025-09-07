@@ -23,6 +23,7 @@ export { default as ContactHeroSection } from './ContactHeroSection.vue'
 export { default as ServicesHeroSection } from './ServicesHeroSection.vue'
 export { default as FAQHeroSection } from './FAQHeroSection.vue'
 export { default as HVACHeroSection } from './HVACHeroSection.vue'
+export { default as CareerHeroSection } from './CareerHeroSection.vue'
 
 // Generic reusable sections
 export { default as MapSection } from './MapSection.vue'
@@ -39,3 +40,9 @@ export { default as HVACServicesSection } from './HVACServicesSection.vue'
 export { default as HVACSystemsSection } from './HVACSystemsSection.vue'
 export { default as HVACWhyChooseUsSection } from './HVACWhyChooseUsSection.vue'
 export { default as HVACPricingSection } from './HVACPricingSection.vue'
+
+// Career sections
+export { default as CareerWhyWorkWithUsSection } from './CareerWhyWorkWithUsSection.vue'
+export { default as CareerJobOpeningsSection } from './CareerJobOpeningsSection.vue'
+export { default as CareerBenefitsSection } from './CareerBenefitsSection.vue'
+export { default as CareerApplicationProcessSection } from './CareerApplicationProcessSection.vue'
