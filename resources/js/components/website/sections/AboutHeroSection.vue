@@ -53,29 +53,15 @@
         <div class="order-1 lg:order-2">
           <div class="relative">
             <div class="grid grid-cols-2 gap-6">
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Award class="w-6 h-6 text-blue-600" />
+              <div 
+                v-for="highlight in companyHighlights" 
+                :key="highlight.id"
+                class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300"
+              >
+                <div :class="`w-12 h-12 ${highlight.bgColor} rounded-xl flex items-center justify-center mx-auto mb-4`">
+                  <component :is="highlight.icon" :class="`w-6 h-6 ${highlight.iconColor}`" />
                 </div>
-                <h3 class="text-white font-semibold text-sm">15+ Years</h3>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle class="w-6 h-6 text-green-600" />
-                </div>
-                <h3 class="text-white font-semibold text-sm">150+ Projects</h3>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Heart class="w-6 h-6 text-purple-600" />
-                </div>
-                <h3 class="text-white font-semibold text-sm">98% Satisfaction</h3>
-              </div>
-              <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300">
-                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Shield class="w-6 h-6 text-orange-600" />
-                </div>
-                <h3 class="text-white font-semibold text-sm">Quality Assured</h3>
+                <h3 class="text-white font-semibold text-sm">{{ highlight.title }}</h3>
               </div>
             </div>
           </div>
@@ -97,6 +83,38 @@
 import { Link } from '@inertiajs/vue3'
 import { Phone, BookOpen, Award, CheckCircle, Heart, Shield } from 'lucide-vue-next'
 import { home, contact } from '@/routes/website'
+
+// Company highlights data array
+const companyHighlights = [
+  {
+    id: 1,
+    icon: Award,
+    bgColor: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    title: '15+ Years'
+  },
+  {
+    id: 2,
+    icon: CheckCircle,
+    bgColor: 'bg-green-100',
+    iconColor: 'text-green-600',
+    title: '150+ Projects'
+  },
+  {
+    id: 3,
+    icon: Heart,
+    bgColor: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+    title: '98% Satisfaction'
+  },
+  {
+    id: 4,
+    icon: Shield,
+    bgColor: 'bg-orange-100',
+    iconColor: 'text-orange-600',
+    title: 'Quality Assured'
+  }
+]
 </script>
 
 <style scoped>

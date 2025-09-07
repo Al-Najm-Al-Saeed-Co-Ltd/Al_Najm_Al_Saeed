@@ -26,33 +26,16 @@
         </div>
         <div class="bg-gray-100 rounded-2xl p-8">
           <div class="grid grid-cols-2 gap-6">
-            <div class="text-center">
+            <div 
+              v-for="feature in aboutFeatures" 
+              :key="feature.id"
+              class="text-center"
+            >
               <div class="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp class="w-8 h-8 text-white" />
+                <component :is="feature.icon" class="w-8 h-8 text-white" />
               </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Strategic Planning</h4>
-              <p class="text-sm text-gray-600">Comprehensive project planning and execution</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users class="w-8 h-8 text-white" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Skilled Professionals</h4>
-              <p class="text-sm text-gray-600">Highly qualified and experienced team</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <Settings class="w-8 h-8 text-white" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Cutting-Edge Technology</h4>
-              <p class="text-sm text-gray-600">Latest tools and technologies</p>
-            </div>
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckSquare class="w-8 h-8 text-white" />
-              </div>
-              <h4 class="font-semibold text-gray-900 mb-2">Efficient Management</h4>
-              <p class="text-sm text-gray-600">Streamlined project management</p>
+              <h4 class="font-semibold text-gray-900 mb-2">{{ feature.title }}</h4>
+              <p class="text-sm text-gray-600">{{ feature.description }}</p>
             </div>
           </div>
         </div>
@@ -72,6 +55,34 @@ const props = defineProps({
     default: false
   }
 })
+
+// About features data array
+const aboutFeatures = [
+  {
+    id: 1,
+    icon: TrendingUp,
+    title: 'Strategic Planning',
+    description: 'Comprehensive project planning and execution'
+  },
+  {
+    id: 2,
+    icon: Users,
+    title: 'Skilled Professionals',
+    description: 'Highly qualified and experienced team'
+  },
+  {
+    id: 3,
+    icon: Settings,
+    title: 'Cutting-Edge Technology',
+    description: 'Latest tools and technologies'
+  },
+  {
+    id: 4,
+    icon: CheckSquare,
+    title: 'Efficient Management',
+    description: 'Streamlined project management'
+  }
+]
 </script>
 
 <style scoped>

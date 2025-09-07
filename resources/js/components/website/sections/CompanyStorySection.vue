@@ -35,51 +35,19 @@
 
           <!-- Key Milestones -->
           <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="flex items-start space-x-3">
+            <div 
+              v-for="milestone in milestones" 
+              :key="milestone.id"
+              class="flex items-start space-x-3"
+            >
               <div class="flex-shrink-0 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
                 <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900">1999</h4>
-                <p class="text-sm text-gray-600">Company Founded</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900">2010</h4>
-                <p class="text-sm text-gray-600">Expanded to HVAC Services</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900">2015</h4>
-                <p class="text-sm text-gray-600">Added IT Solutions</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-3">
-              <div class="flex-shrink-0 w-8 h-8 bg-brand-green rounded-full flex items-center justify-center">
-                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900">2024</h4>
-                <p class="text-sm text-gray-600">150+ Projects Completed</p>
+                <h4 class="font-semibold text-gray-900">{{ milestone.year }}</h4>
+                <p class="text-sm text-gray-600">{{ milestone.description }}</p>
               </div>
             </div>
           </div>
@@ -122,4 +90,28 @@ defineProps({
     default: false
   }
 })
+
+// Milestones data array
+const milestones = [
+  {
+    id: 1,
+    year: '1999',
+    description: 'Company Founded'
+  },
+  {
+    id: 2,
+    year: '2010',
+    description: 'Expanded to HVAC Services'
+  },
+  {
+    id: 3,
+    year: '2015',
+    description: 'Added IT Solutions'
+  },
+  {
+    id: 4,
+    year: '2024',
+    description: '150+ Projects Completed'
+  }
+]
 </script>
