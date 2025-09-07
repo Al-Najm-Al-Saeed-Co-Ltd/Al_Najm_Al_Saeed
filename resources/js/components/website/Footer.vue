@@ -5,7 +5,9 @@
         <!-- Company Info Section -->
         <div class="col-span-1 sm:col-span-2 lg:col-span-2">
           <div class="flex items-center mb-4">
-            <img src="/assets/website/logo-white.svg" alt="Al Najm Al Saeed" class="h-10 sm:h-12 lg:h-14 w-auto" />
+            <Link :href="home()" class="flex items-center">
+              <img src="/assets/website/logo-white.svg" alt="Al Najm Al Saeed" class="h-10 sm:h-12 lg:h-14 w-auto" />
+            </Link>
           </div>
           <p class="text-gray-300 mb-4 text-sm sm:text-base leading-relaxed">
             Welcome to Al Najm Al Saeed Co. Ltd., where innovation drives excellence in construction, HVAC, IT
@@ -73,5 +75,7 @@
 </template>
 
 <script setup>
+import { Link } from '@inertiajs/vue3'
+import { home } from '@/routes/website'
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-vue-next'
 </script>

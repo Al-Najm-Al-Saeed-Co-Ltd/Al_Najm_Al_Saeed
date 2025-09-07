@@ -6,17 +6,19 @@
           <!-- Logo -->
           <div class="flex items-center">
             <div class="flex-shrink-0 flex items-center">
-              <img src="/assets/website/logo-black.svg" alt="Al Najm Al Saeed" class="h-12 sm:h-14 w-auto"
-                loading="eager" />
+              <Link :href="home()" class="flex items-center">
+                <img src="/assets/website/logo-black.svg" alt="Al Najm Al Saeed" class="h-12 sm:h-14 w-auto"
+                  loading="eager" />
+              </Link>
             </div>
           </div>
 
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
-            <a v-for="item in navigationItems" :key="item.href" :href="item.href"
-              :class="getNavLinkClasses(item.isButton, false)" @click="handleNavClick(false)">
+            <Link v-for="item in navigationItems" :key="item.href" :href="item.href"
+              :class="getNavLinkClasses(item.isButton, false, item.href)" @click="handleNavClick(false)">
               {{ item.label }}
-            </a>
+            </Link>
           </nav>
 
           <!-- Mobile menu button -->
@@ -43,10 +45,10 @@
         leave-from-class="opacity-100 max-h-96" leave-to-class="opacity-0 max-h-0">
         <div v-show="isMobileMenuOpen" class="md:hidden border-t border-white/20 overflow-hidden">
           <nav class="px-6 py-4 space-y-2" aria-label="Mobile navigation">
-            <a v-for="item in navigationItems" :key="item.href" :href="item.href"
-              :class="getNavLinkClasses(item.isButton, true)" @click="handleNavClick(true)">
+            <Link v-for="item in navigationItems" :key="item.href" :href="item.href"
+              :class="getNavLinkClasses(item.isButton, true, item.href)" @click="handleNavClick(true)">
               {{ item.label }}
-            </a>
+            </Link>
           </nav>
         </div>
       </Transition>
@@ -55,18 +57,31 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
+import { Link, usePage } from '@inertiajs/vue3'
+import { home, about, services, hvac, career, contact } from '@/routes/website'
+import { urlIsActive } from '@/lib/utils'
+
+const page = usePage()
 
 const navigationItems = [
-  { href: '/', label: 'Home', isButton: false },
-  { href: '/about', label: 'About', isButton: false },
-  { href: '#services', label: 'Services', isButton: false },
-  { href: '#hvac', label: 'HVAC', isButton: false },
-  { href: '#career', label: 'Career', isButton: false },
-  { href: '#contact', label: 'Contact', isButton: false },
+  { href: home(), label: 'Home', isButton: false },
+  { href: about(), label: 'About', isButton: false },
+  { href: services(), label: 'Services', isButton: false },
+  { href: hvac(), label: 'HVAC', isButton: false },
+  { href: career(), label: 'Career', isButton: false },
+  { href: contact(), label: 'Contact', isButton: false },
   { href: '#quote', label: 'Get A Quote', isButton: true }
 ]
+
+// Active route detection
+const isCurrentRoute = computed(() => (href) => {
+  if (typeof href === 'string' && href.startsWith('#')) {
+    return false // Don't mark anchor links as active
+  }
+  return urlIsActive(href, page.url)
+})
 
 const isMobileMenuOpen = ref(false)
 
@@ -78,8 +93,9 @@ const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
 
-const getNavLinkClasses = (isButton, isMobile) => {
+const getNavLinkClasses = (isButton, isMobile, href) => {
   const baseClasses = 'font-medium transition duration-300'
+  const isActive = isCurrentRoute.value(href)
 
   if (isButton) {
     if (isMobile) {
@@ -89,10 +105,10 @@ const getNavLinkClasses = (isButton, isMobile) => {
   }
 
   if (isMobile) {
-    return `${baseClasses} block py-2 text-gray-700 hover:text-brand-green`
+    return `${baseClasses} block py-2 ${isActive ? 'text-brand-green font-semibold' : 'text-gray-700 hover:text-brand-green'}`
   }
 
-  return `${baseClasses} text-gray-700 hover:text-brand-green`
+  return `${baseClasses} ${isActive ? 'text-brand-green font-semibold' : 'text-gray-700 hover:text-brand-green'}`
 }
 
 const handleNavClick = (isMobile) => {
