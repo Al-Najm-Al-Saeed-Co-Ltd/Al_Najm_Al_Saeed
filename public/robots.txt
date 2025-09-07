@@ -1,2 +1,22 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://alnajmalsaeed.com/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /storage/
+Disallow: /vendor/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /hvac
+Allow: /career
+Allow: /contact
+Allow: /faq
+
+# Crawl delay
+Crawl-delay: 1

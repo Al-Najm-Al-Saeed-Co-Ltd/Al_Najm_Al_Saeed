@@ -1,6 +1,12 @@
 <template>
   <WebsiteLayout>
-    <Head title="Career Opportunities" />
+    <SEO
+      title="Career Opportunities - Join Our HVAC Team | Al Najm Al Saeed Co. Ltd."
+      description="Join Al Najm Al Saeed Co. Ltd. team! Explore career opportunities in HVAC industry. We're hiring HVAC technicians, project managers, sales representatives, and customer service professionals in Saudi Arabia."
+      keywords="HVAC jobs Saudi Arabia, HVAC technician jobs, HVAC career opportunities, HVAC company jobs, HVAC project manager jobs, HVAC sales jobs, HVAC customer service jobs"
+      url="/career"
+      :structured-data="careerStructuredData"
+    />
 
     <!-- Hero Section -->
     <CareerHeroSection />
@@ -24,8 +30,8 @@
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
-import { Head } from '@inertiajs/vue3'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
+import SEO from '@/components/SEO.vue'
 import {
   CareerHeroSection,
   CareerWhyWorkWithUsSection,
@@ -35,6 +41,30 @@ import {
   CTASection
 } from '@/components/website/sections'
 import { useScrollAnimations } from '@/composables/useScrollAnimations'
+
+// Structured data for Career page
+const careerStructuredData = {
+  "@type": "JobPosting",
+  "title": "HVAC Career Opportunities",
+  "description": "Join our team of HVAC professionals in Saudi Arabia",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Al Najm Al Saeed Co. Ltd.",
+    "sameAs": "https://alnajmalsaeed.com"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SA",
+      "addressLocality": "Riyadh"
+    }
+  },
+  "employmentType": "FULL_TIME",
+  "workHours": "40 hours per week",
+  "datePosted": "2024-01-01",
+  "validThrough": "2024-12-31"
+}
 
 // Use scroll animations composable
 const { visibleSections, initialize, cleanup } = useScrollAnimations()

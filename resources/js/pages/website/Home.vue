@@ -1,6 +1,12 @@
 <template>
   <WebsiteLayout>
-    <Head title="Home" />
+    <SEO
+      title="Al Najm Al Saeed Co. Ltd. - Professional HVAC Services in Saudi Arabia"
+      description="Leading HVAC company in Saudi Arabia offering professional heating, ventilation, and air conditioning services. Installation, repair, maintenance, and 24/7 emergency services in Riyadh and across Saudi Arabia."
+      keywords="HVAC Saudi Arabia, heating ventilation air conditioning, HVAC installation Riyadh, HVAC repair Saudi Arabia, commercial HVAC, residential HVAC, air conditioning services, HVAC maintenance"
+      url="/"
+      :structured-data="homeStructuredData"
+    />
 
     <!-- Hero Section -->
     <HeroSection :slides="slides" />
@@ -34,7 +40,6 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { Head } from '@inertiajs/vue3'
 import {
   HeroSection,
   AboutSection,
@@ -47,6 +52,7 @@ import {
   ContactSection
 } from '@/components/website/sections'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
+import SEO from '@/components/SEO.vue'
 import { useScrollAnimations } from '@/composables/useScrollAnimations'
 
 // Use scroll animations composable
@@ -71,6 +77,32 @@ const slides = ref([
     alt: 'Maintenance Work'
   }
 ])
+
+// Structured data for Home page
+const homeStructuredData = {
+  "@type": "WebSite",
+  "name": "Al Najm Al Saeed Co. Ltd.",
+  "url": "https://alnajmalsaeed.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://alnajmalsaeed.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Al Najm Al Saeed Co. Ltd.",
+    "image": "https://alnajmalsaeed.com/assets/website/logo.png",
+    "telephone": "+966-53-616-1198",
+    "email": "info@alnajmalsaeed.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SA",
+      "addressLocality": "Riyadh"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "priceRange": "$$"
+  }
+}
 
 // Lifecycle hooks
 onMounted(initialize)

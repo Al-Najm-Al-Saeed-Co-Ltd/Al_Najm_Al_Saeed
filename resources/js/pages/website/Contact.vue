@@ -1,6 +1,12 @@
 <template>
   <WebsiteLayout>
-    <Head title="Contact Us" />
+    <SEO
+      title="Contact Al Najm Al Saeed Co. Ltd. - HVAC Services in Saudi Arabia"
+      description="Contact Al Najm Al Saeed Co. Ltd. for professional HVAC services in Saudi Arabia. Get free quotes, emergency services, and expert consultation. Call +966 53 616 1198 or visit our office in Riyadh."
+      keywords="contact HVAC company Saudi Arabia, HVAC consultation, HVAC emergency contact, HVAC quote request, HVAC customer service, HVAC support Saudi Arabia"
+      url="/contact"
+      :structured-data="contactStructuredData"
+    />
 
     <!-- Hero Section -->
     <ContactHeroSection />
@@ -166,14 +172,47 @@
 </template>
 
 <script setup>
-import { Head, Link } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
 import { home } from '@/routes/website'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
+import SEO from '@/components/SEO.vue'
 import {
   ContactHeroSection,
   MapSection,
   FAQGridSection
 } from '@/components/website/sections'
+
+// Structured data for Contact page
+const contactStructuredData = {
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Al Najm Al Saeed Co. Ltd.",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+966-53-616-1198",
+        "contactType": "customer service",
+        "areaServed": "SA",
+        "availableLanguage": ["English", "Arabic"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+966-53-616-1198",
+        "contactType": "emergency",
+        "areaServed": "SA",
+        "availableLanguage": ["English", "Arabic"]
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SA",
+      "addressLocality": "Riyadh"
+    },
+    "email": "info@alnajmalsaeed.com",
+    "url": "https://alnajmalsaeed.com"
+  }
+}
 import {
   Phone,
   Mail,
