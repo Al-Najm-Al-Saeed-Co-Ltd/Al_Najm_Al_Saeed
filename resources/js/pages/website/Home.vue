@@ -21,7 +21,7 @@
     <TestimonialsSection :visible="visibleSections.has('testimonials')" />
 
     <!-- Career Section -->
-    <CareerSection :visible="visibleSections.has('career')" />
+    <!-- <CareerSection :visible="visibleSections.has('career')" /> -->
 
     <!-- Team Section -->
     <TeamSection :visible="visibleSections.has('team')" />

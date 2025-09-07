@@ -11,10 +11,10 @@
           <div class="relative z-10">
             <div class="text-center mb-12">
               <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Ready to Start Your Next Project?
+                Partner With Us Today
               </h2>
               <p class="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto leading-relaxed">
-                Let's discuss how we can bring your vision to life with our comprehensive services and expertise
+                Join our growing family of satisfied clients and experience the difference that 25+ years of excellence makes
               </p>
             </div>
 
@@ -26,8 +26,8 @@
                   <Phone class="w-8 h-8 text-brand-green" />
                 </div>
                 <h3 class="text-lg font-semibold mb-2 text-white">Call Us</h3>
-                <p class="text-white mb-2">+966 XX XXX XXXX</p>
-                <p class="text-sm text-green-100">Mon-Fri 8AM-6PM</p>
+                <p class="text-white mb-2">+966 (53) 616-1198</p>
+                <p class="text-sm text-green-100">Sun-Thu 8AM-5PM</p>
               </div>
 
               <!-- Email -->
@@ -36,7 +36,7 @@
                   <Mail class="w-8 h-8 text-brand-green" />
                 </div>
                 <h3 class="text-lg font-semibold mb-2 text-white">Email Us</h3>
-                <p class="text-white mb-2">info@alnajmalsaeed.com</p>
+                <p class="text-white mb-2">info@alsaeedstar.com</p>
                 <p class="text-sm text-green-100">24/7 Response</p>
               </div>
 
@@ -46,7 +46,7 @@
                   <MapPin class="w-8 h-8 text-brand-green" />
                 </div>
                 <h3 class="text-lg font-semibold mb-2 text-white">Visit Us</h3>
-                <p class="text-white mb-2">Riyadh, Saudi Arabia</p>
+                <p class="text-white mb-2">Prince Abdulaziz bin Musaed bin Julawi 12628</p>
                 <p class="text-sm text-green-100">By Appointment</p>
               </div>
             </div>
@@ -61,7 +61,7 @@
                 Get Free Quote
               </Link>
               <a 
-                href="tel:+966XXXXXXXXX" 
+                href="tel:+966536161198" 
                 class="inline-flex items-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-brand-green font-semibold rounded-lg transition-colors duration-200"
               >
                 <Phone class="mr-2 w-5 h-5" />
