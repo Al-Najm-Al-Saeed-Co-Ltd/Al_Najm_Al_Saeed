@@ -1,15 +1,12 @@
 <template>
   <WebsiteLayout>
-    <SEO
-      title="Al Najm Al Saeed Co. Ltd. - Professional HVAC Services in Saudi Arabia"
+    <SEO title="Al Najm Al Saeed Co. Ltd. - Professional HVAC Services in Saudi Arabia"
       description="Leading HVAC company in Saudi Arabia offering professional heating, ventilation, and air conditioning services. Installation, repair, maintenance, and 24/7 emergency services in Riyadh and across Saudi Arabia."
       keywords="HVAC Saudi Arabia, heating ventilation air conditioning, HVAC installation Riyadh, HVAC repair Saudi Arabia, commercial HVAC, residential HVAC, air conditioning services, HVAC maintenance"
-      url="/"
-      :structured-data="homeStructuredData"
-    />
+      url="/" :structured-data="homeStructuredData" />
 
     <!-- Hero Section -->
-    <HeroSection :slides="slides" />
+    <HeroSection />
 
     <!-- About Section -->
     <AboutSection :visible="visibleSections.has('about')" />
@@ -27,7 +24,7 @@
     <TestimonialsSection :visible="visibleSections.has('testimonials')" />
 
     <!-- Career Section -->
-    <!-- <CareerSection :visible="visibleSections.has('career')" /> -->
+    <CareerSection :visible="visibleSections.has('career')" />
 
     <!-- Team Section -->
     <TeamSection :visible="visibleSections.has('team')" />
@@ -57,26 +54,6 @@ import { useScrollAnimations } from '@/composables/useScrollAnimations'
 
 // Use scroll animations composable
 const { visibleSections, initialize, cleanup } = useScrollAnimations()
-
-// Slider data for HeroSection
-const slides = ref([
-  {
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'Construction Site'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'HVAC System'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'IT Services'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    alt: 'Maintenance Work'
-  }
-])
 
 // Structured data for Home page
 const homeStructuredData = {

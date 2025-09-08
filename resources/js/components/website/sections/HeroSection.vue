@@ -29,35 +29,20 @@
         <!-- Right Column - Image Slider -->
         <div class="order-1 lg:order-2">
           <div class="relative">
-            <!-- Image Slider -->
-            <div class="image-slider-container relative overflow-hidden rounded-2xl shadow-2xl"
-              @mouseenter="isSliderPaused = true" @mouseleave="isSliderPaused = false">
-              <div class="slider-wrapper flex transition-transform duration-700 ease-in-out"
-                :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-                <div v-for="(slide, index) in slides" :key="index" class="slide w-full flex-shrink-0 aspect-video">
-                  <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105" loading="lazy">
+            <!-- Swiper Container -->
+            <div class="swiper hero-swiper rounded-2xl shadow-2xl overflow-hidden">
+              <div class="swiper-wrapper">
+                <div v-for="(slide, index) in slides" :key="index" class="swiper-slide">
+                  <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center" loading="lazy">
                 </div>
               </div>
-
-              <!-- Slider Navigation Dots -->
-              <div class="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <button v-for="(slide, index) in slides" :key="index" @click="goToSlide(index)" :class="[
-                  'w-2 h-2 sm:w-3 sm:h-3 rounded-full transition duration-300',
-                  currentSlide === index ? 'bg-white bg-opacity-100' : 'bg-white bg-opacity-50 hover:bg-opacity-100'
-                ]"></button>
-              </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <div class="mt-4 sm:mt-6 flex justify-center space-x-3 sm:space-x-4">
-              <button @click="prevSlide"
-                class="bg-brand-green hover:bg-brand-green/90 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full transition duration-300 flex items-center justify-center shadow-lg hover:shadow-xl">
-                <ChevronLeft class="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
-              <button @click="nextSlide"
-                class="bg-brand-green hover:bg-brand-green/90 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full transition duration-300 flex items-center justify-center shadow-lg hover:shadow-xl">
-                <ChevronRight class="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
+              
+              <!-- Pagination -->
+              <div class="swiper-pagination"></div>
+              
+              <!-- Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
         </div>
@@ -75,8 +60,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { Rocket, Phone, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { onMounted, onUnmounted } from 'vue'
+import { Rocket, Phone } from 'lucide-vue-next'
+import { Swiper } from 'swiper'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // Props
 const props = defineProps({
@@ -86,10 +76,6 @@ const props = defineProps({
       {
         image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
         alt: 'Construction Site'
-      },
-      {
-        image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-        alt: 'HVAC System'
       },
       {
         image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
@@ -103,42 +89,80 @@ const props = defineProps({
   }
 })
 
-// Reactive data
-const currentSlide = ref(0)
-const isSliderPaused = ref(false)
-
-// Methods
-const nextSlide = () => {
-  currentSlide.value = (currentSlide.value + 1) % props.slides.length
-}
-
-const prevSlide = () => {
-  currentSlide.value = (currentSlide.value - 1 + props.slides.length) % props.slides.length
-}
-
-const goToSlide = (index) => {
-  currentSlide.value = index
-}
-
-// Lifecycle hooks
-let sliderInterval = null
+// Swiper instance
+let swiper = null
 
 onMounted(() => {
-  // Auto-play slider (pause on hover)
-  const startSlider = () => {
-    sliderInterval = setInterval(() => {
-      if (!isSliderPaused.value) {
-        nextSlide()
+  // Initialize Swiper
+  swiper = new Swiper('.hero-swiper', {
+    modules: [Navigation, Pagination, Autoplay],
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      bulletClass: 'swiper-pagination-bullet',
+      bulletActiveClass: 'swiper-pagination-bullet-active',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    speed: 1000,
+    // Touch and mouse support
+    touchRatio: 1,
+    touchAngle: 45,
+    grabCursor: true,
+    // Responsive breakpoints
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoplay: {
+          delay: 4000,
+        }
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoplay: {
+          delay: 5000,
+        }
+      },
+      1024: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoplay: {
+          delay: 6000,
+        }
       }
-    }, 5000)
-  }
-  
-  startSlider()
+    },
+    // Accessibility
+    a11y: {
+      prevSlideMessage: 'Previous slide',
+      nextSlideMessage: 'Next slide',
+      firstSlideMessage: 'This is the first slide',
+      lastSlideMessage: 'This is the last slide',
+    },
+    // Keyboard control
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+  })
 })
 
 onUnmounted(() => {
-  if (sliderInterval) {
-    clearInterval(sliderInterval)
+  if (swiper) {
+    swiper.destroy(true, true)
   }
 })
 </script>
@@ -154,6 +178,136 @@ onUnmounted(() => {
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+/* Swiper Custom Styles */
+.hero-swiper {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hero-swiper .swiper-wrapper {
+  height: auto;
+}
+
+.hero-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero-swiper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+  object-position: center;
+  display: block;
+}
+
+/* Custom Pagination */
+.hero-swiper :deep(.swiper-pagination) {
+  bottom: 20px;
+}
+
+.hero-swiper :deep(.swiper-pagination-bullet) {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.hero-swiper :deep(.swiper-pagination-bullet-active) {
+  background: #10B981;
+  transform: scale(1.2);
+}
+
+/* Custom Navigation */
+.hero-swiper :deep(.swiper-button-next),
+.hero-swiper :deep(.swiper-button-prev) {
+  color: #10B981;
+  background: rgba(255, 255, 255, 0.9);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-top: -22px;
+  transition: all 0.3s ease;
+}
+
+.hero-swiper :deep(.swiper-button-next:hover),
+.hero-swiper :deep(.swiper-button-prev:hover) {
+  background: #10B981;
+  color: white;
+  transform: scale(1.1);
+}
+
+.hero-swiper :deep(.swiper-button-next::after),
+.hero-swiper :deep(.swiper-button-prev::after) {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Small screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-swiper :deep(.swiper-button-next),
+  .hero-swiper :deep(.swiper-button-prev) {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+  }
+  
+  .hero-swiper :deep(.swiper-button-next::after),
+  .hero-swiper :deep(.swiper-button-prev::after) {
+    font-size: 16px;
+  }
+}
+
+/* Mobile screens (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .hero-swiper :deep(.swiper-button-next),
+  .hero-swiper :deep(.swiper-button-prev) {
+    width: 36px;
+    height: 36px;
+    margin-top: -18px;
+  }
+  
+  .hero-swiper :deep(.swiper-button-next::after),
+  .hero-swiper :deep(.swiper-button-prev::after) {
+    font-size: 14px;
+  }
+  
+  .hero-swiper :deep(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Extra small screens (below 576px) */
+@media (max-width: 575px) {
+  .hero-swiper :deep(.swiper-button-next),
+  .hero-swiper :deep(.swiper-button-prev) {
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+  }
+  
+  .hero-swiper :deep(.swiper-button-next::after),
+  .hero-swiper :deep(.swiper-button-prev::after) {
+    font-size: 12px;
+  }
+  
+  .hero-swiper :deep(.swiper-pagination-bullet) {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .hero-swiper :deep(.swiper-pagination) {
+    bottom: 15px;
   }
 }
 </style>
