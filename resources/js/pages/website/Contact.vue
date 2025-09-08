@@ -99,6 +99,10 @@
                   <span class="text-gray-600">Friday - Saturday</span>
                   <span class="font-semibold text-gray-900">Closed</span>
                 </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">National Holidays</span>
+                  <span class="font-semibold text-gray-900">Closed</span>
+                </div>
               </div>
             </div>
 
