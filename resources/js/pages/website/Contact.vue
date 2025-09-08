@@ -1,12 +1,9 @@
 <template>
   <WebsiteLayout>
-    <SEO
-      title="Contact Al Najm Al Saeed Co. Ltd. - HVAC Services in Saudi Arabia"
+    <SEO title="Contact Al Najm Al Saeed Co. Ltd. - HVAC Services in Saudi Arabia"
       description="Contact Al Najm Al Saeed Co. Ltd. for professional HVAC services in Saudi Arabia. Get free quotes, emergency services, and expert consultation. Call +966 53 616 1198 or visit our office in Riyadh."
       keywords="contact HVAC company Saudi Arabia, HVAC consultation, HVAC emergency contact, HVAC quote request, HVAC customer service, HVAC support Saudi Arabia"
-      url="/contact"
-      :structured-data="contactStructuredData"
-    />
+      url="/contact" :structured-data="contactStructuredData" />
 
     <!-- Hero Section -->
     <ContactHeroSection />
@@ -24,37 +21,42 @@
               </p>
             </div>
 
-            <form class="space-y-6">
+            <form @submit.prevent="submitContactForm" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                  <input type="text" id="firstName" name="firstName" required
+                  <label for="full_name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                  <input type="text" id="full_name" name="full_name" v-model="contactForm.full_name"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-200">
+                  <div v-if="errors.full_name" class="mt-1 text-sm text-red-600">{{ errors.full_name }}</div>
                 </div>
                 <div>
-                  <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                  <input type="text" id="lastName" name="lastName" required
+                  <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company Name (Optional)</label>
+                  <input type="text" id="company" name="company" v-model="contactForm.company"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-200">
+                  <div v-if="errors.company" class="mt-1 text-sm text-red-600">{{ errors.company }}</div>
                 </div>
               </div>
 
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                <input type="email" id="email" name="email" required
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                <input type="email" id="email" name="email" v-model="contactForm.email"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-200">
+                <div v-if="errors.email" class="mt-1 text-sm text-red-600">{{ errors.email }}</div>
               </div>
 
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                <input type="tel" id="phone" name="phone"
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" v-model="contactForm.phone"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-200">
+                <div v-if="errors.phone" class="mt-1 text-sm text-red-600">{{ errors.phone }}</div>
               </div>
 
+
               <div>
-                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
-                <select id="service" name="service"
+                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Service Interested In *</label>
+                <select id="service" name="service" v-model="contactForm.service"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-200">
-                  <option value="">Select a service</option>
+                  <option value="" disabled selected>Select a service</option>
                   <option value="hvac">HVAC Systems</option>
                   <option value="construction">Building Construction</option>
                   <option value="interior">Interior Design</option>
@@ -63,19 +65,21 @@
                   <option value="web-development">Website Development</option>
                   <option value="other">Other</option>
                 </select>
+                <div v-if="errors.service" class="mt-1 text-sm text-red-600">{{ errors.service }}</div>
               </div>
 
               <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea id="message" name="message" rows="5" required
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                <textarea id="message" name="message" rows="5" v-model="contactForm.message"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent transition duration-200"
                   placeholder="Tell us about your project..."></textarea>
+                <div v-if="errors.message" class="mt-1 text-sm text-red-600">{{ errors.message }}</div>
               </div>
 
-              <button type="submit"
-                class="w-full bg-brand-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-green/90 transition duration-300 shadow-lg hover:shadow-xl flex items-center justify-center">
+              <button type="submit" :disabled="isSubmitting"
+                class="w-full bg-brand-green text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-green/90 transition duration-300 shadow-lg hover:shadow-xl flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
                 <Send class="w-5 h-5 mr-2" />
-                Send Message
+                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
               </button>
             </form>
           </div>
@@ -176,7 +180,8 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { reactive, ref } from 'vue'
+import { Link, router } from '@inertiajs/vue3'
 import { home } from '@/routes/website'
 import WebsiteLayout from '@/layouts/website/WebsiteLayout.vue'
 import SEO from '@/components/SEO.vue'
@@ -185,6 +190,15 @@ import {
   MapSection,
   FAQGridSection
 } from '@/components/website/sections'
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Send,
+  Clock,
+  AlertTriangle
+} from 'lucide-vue-next'
 
 // Structured data for Contact page
 const contactStructuredData = {
@@ -217,13 +231,42 @@ const contactStructuredData = {
     "url": "https://alnajmalsaeed.com"
   }
 }
-import {
-  Phone,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Send,
-  Clock,
-  AlertTriangle
-} from 'lucide-vue-next'
+
+// Form data
+const contactForm = reactive({
+  full_name: '',
+  company: '',
+  email: '',
+  phone: '',
+  service: '',
+  message: ''
+})
+
+const isSubmitting = ref(false)
+const errors = ref({})
+
+// Form submission
+const submitContactForm = async () => {
+  isSubmitting.value = true
+  
+  try {
+    await router.post('/contact', contactForm, {
+      onSuccess: () => {
+        // Reset form on success
+        Object.keys(contactForm).forEach(key => {
+          contactForm[key] = ''
+        })
+        errors.value = {}
+      },
+      onError: (serverErrors) => {
+        console.error('Form submission errors:', serverErrors)
+        errors.value = serverErrors
+      }
+    })
+  } catch (error) {
+    console.error('Form submission error:', error)
+  } finally {
+    isSubmitting.value = false
+  }
+}
 </script>

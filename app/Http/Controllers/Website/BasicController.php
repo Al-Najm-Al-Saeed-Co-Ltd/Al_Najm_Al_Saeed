@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 
 class BasicController extends Controller
@@ -62,21 +64,36 @@ class BasicController extends Controller
     public function submitContact(Request $request)
     {
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'full_name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
             'company' => 'nullable|string|max:255',
+            'service' => 'required|string|max:255',
             'message' => 'required|string|max:1000',
         ]);
 
-        // TODO: Implement contact form submission logic
-        // This could include:
-        // - Sending email notifications
-        // - Storing in database
-        // - Integrating with CRM systems
+        $contactData = $request->only([
+            'full_name',
+            'email',
+            'phone',
+            'company',
+            'service',
+            'message'
+        ]);
 
-        return back()->with('success', 'Thank you for your message! We will get back to you soon.');
+        try {
+            // Send email to admin
+            $adminEmail = config('mail.admin_email', 'suhailsaeedme@gmail.com');
+            Mail::to($adminEmail)->send(new ContactFormMail($contactData));
+
+            // Send confirmation email to customer
+            Mail::to($contactData['email'])->send(new \App\Mail\ContactConfirmationMail($contactData));
+
+            return back()->with('success', 'Thank you for your message! We will get back to you soon.');
+        } catch (\Exception $e) {
+            \Log::error('Contact form email error: ' . $e->getMessage());
+            return back()->with('error', 'There was an error sending your message. Please try again or contact us directly.');
+        }
     }
 
     /**

@@ -109,8 +109,19 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@alsaeedstar.com'),
+        'name' => env('MAIL_FROM_NAME', 'Al Najm Al Saeed Co. Ltd.'),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Email
+    |--------------------------------------------------------------------------
+    |
+    | This is the email address where contact form submissions will be sent.
+    |
+    */
+
+    'admin_email' => env('MAIL_ADMIN_EMAIL', 'suhailsaeedme@gmail.com'),
 
 ];
