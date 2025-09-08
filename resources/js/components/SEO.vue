@@ -110,30 +110,86 @@ const structuredData = computed(() => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "HVAC Services",
+      "name": "Comprehensive HVAC Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "HVAC Installation",
-            "description": "Professional HVAC system installation services"
+            "name": "HVAC System Installation",
+            "description": "Complete HVAC system installation for residential and commercial properties including ductwork, equipment setup, and system commissioning"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "HVAC Repair",
-            "description": "Fast and reliable HVAC repair services"
+            "name": "HVAC Repair & Troubleshooting",
+            "description": "Expert diagnosis and repair of all HVAC equipment including air conditioners, heaters, ventilation systems, and ductwork"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "HVAC Maintenance",
-            "description": "Preventive maintenance for optimal system performance"
+            "name": "Preventive Maintenance",
+            "description": "Regular maintenance programs to ensure optimal system performance, energy efficiency, and extended equipment lifespan"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Air Conditioning Services",
+            "description": "Complete AC services including installation, repair, maintenance, and replacement of residential and commercial air conditioning units"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Heating System Services",
+            "description": "Professional heating system installation, repair, and maintenance for furnaces, boilers, and heat pumps"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ventilation & Air Quality",
+            "description": "Indoor air quality solutions including ventilation system design, air purification, and humidity control"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ductwork Services",
+            "description": "Duct design, installation, cleaning, sealing, and repair services for optimal air distribution and energy efficiency"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Commercial HVAC Solutions",
+            "description": "Specialized HVAC services for commercial buildings, offices, retail spaces, and industrial facilities"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency HVAC Services",
+            "description": "24/7 emergency HVAC repair and maintenance services for urgent heating and cooling issues"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Energy Efficiency Consulting",
+            "description": "HVAC energy audits and efficiency optimization to reduce energy costs and improve system performance"
           }
         }
       ]
