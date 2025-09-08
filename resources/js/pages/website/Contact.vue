@@ -199,6 +199,7 @@ import {
   Clock,
   AlertTriangle
 } from 'lucide-vue-next'
+import { useNotification } from '@/composables/useNotification'
 
 // Structured data for Contact page
 const contactStructuredData = {
@@ -244,28 +245,40 @@ const contactForm = reactive({
 
 const isSubmitting = ref(false)
 const errors = ref({})
+const { success: showSuccessNotification } = useNotification()
 
 // Form submission
 const submitContactForm = async () => {
+  if (isSubmitting.value) return
+  
   isSubmitting.value = true
   
   try {
     await router.post('/contact', contactForm, {
       onSuccess: () => {
-        // Reset form on success
-        Object.keys(contactForm).forEach(key => {
-          contactForm[key] = ''
+        // Reset form and clear errors
+        Object.assign(contactForm, {
+          full_name: '',
+          company: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
         })
         errors.value = {}
+        
+        // Show success notification
+        showSuccessNotification('Thank you for your message! We will get back to you within 24 hours.')
       },
       onError: (serverErrors) => {
-        console.error('Form submission errors:', serverErrors)
         errors.value = serverErrors
+      },
+      onFinish: () => {
+        isSubmitting.value = false
       }
     })
   } catch (error) {
     console.error('Form submission error:', error)
-  } finally {
     isSubmitting.value = false
   }
 }
