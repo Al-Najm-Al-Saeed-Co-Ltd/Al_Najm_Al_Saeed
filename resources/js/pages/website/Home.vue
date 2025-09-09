@@ -1,8 +1,8 @@
 <template>
   <WebsiteLayout>
-    <SEO title="Al Najm Al Saeed Co. Ltd. - Professional HVAC Services in Saudi Arabia"
-      description="Leading HVAC company in Saudi Arabia offering professional heating, ventilation, and air conditioning services. Installation, repair, maintenance, and 24/7 emergency services in Riyadh and across Saudi Arabia."
-      keywords="HVAC Saudi Arabia, heating ventilation air conditioning, HVAC installation Riyadh, HVAC repair Saudi Arabia, commercial HVAC, residential HVAC, air conditioning services, HVAC maintenance"
+    <SEO title="Best HVAC Construction Company Riyadh | مقاول تكييف وبناء الرياض | Al Najm Al Saeed"
+      description="Leading HVAC and construction company in Riyadh, Saudi Arabia. Professional HVAC installation, repair, maintenance, and building construction services. 24/7 emergency support. Licensed contractor serving Riyadh and all Saudi Arabia."
+      keywords="Best HVAC Construction Company Riyadh, مقاول تكييف وبناء الرياض, HVAC Contractor Riyadh, Construction Company Riyadh, AC Repair Riyadh, HVAC Installation Riyadh, Building Contractor Riyadh, MEP Contractor Riyadh, مقاول تكييف الرياض, شركة مقاولات الرياض"
       url="/" :structured-data="homeStructuredData" />
 
     <!-- Hero Section -->
@@ -58,26 +58,64 @@ const { visibleSections, initialize, cleanup } = useScrollAnimations()
 // Structured data for Home page
 const homeStructuredData = {
   "@type": "WebSite",
-  "name": "Al Najm Al Saeed Co. Ltd.",
-  "url": "https://alnajmalsaeed.com",
+  "name": "Al Najm Al Saeed Co. Ltd. - Best HVAC Construction Company Riyadh",
+  "url": "https://alsaeedstar.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://alnajmalsaeed.com/search?q={search_term_string}",
+    "target": "https://alsaeedstar.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
   "mainEntity": {
     "@type": "LocalBusiness",
     "name": "Al Najm Al Saeed Co. Ltd.",
-    "image": "https://alnajmalsaeed.com/assets/website/logo.png",
+    "alternateName": "مقاول تكييف وبناء الرياض",
+    "image": "https://alsaeedstar.com/assets/website/logo.png",
     "telephone": "+966-53-616-1198",
-    "email": "info@alnajmalsaeed.com",
+    "email": "info@alsaeedstar.com",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "SA",
-      "addressLocality": "Riyadh"
+      "streetAddress": "Prince Abdulaziz bin Musaed bin Julawi",
+      "addressLocality": "Riyadh",
+      "addressRegion": "Riyadh Province",
+      "postalCode": "12628",
+      "addressCountry": "SA"
     },
-    "openingHours": "Mo-Fr 08:00-18:00",
-    "priceRange": "$$"
+    "openingHours": "Mo-Th 08:00-17:00",
+    "priceRange": "$$",
+    "currenciesAccepted": "SAR",
+    "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Riyadh"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "HVAC and Construction Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "HVAC Installation Riyadh",
+            "description": "Professional HVAC system installation in Riyadh"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Construction Services Riyadh",
+            "description": "Building construction and renovation services in Riyadh"
+          }
+        }
+      ]
+    }
   }
 }
 

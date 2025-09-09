@@ -1,45 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://alnajmalsaeed.com/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/?lang=ar"/>
   </url>
   <url>
-    <loc>https://alnajmalsaeed.com/about</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/about</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/about?lang=ar"/>
   </url>
   <url>
-    <loc>https://alnajmalsaeed.com/services</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/services</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/services?lang=ar"/>
   </url>
   <url>
-    <loc>https://alnajmalsaeed.com/hvac</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/hvac</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/hvac"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/hvac?lang=ar"/>
   </url>
   <url>
-    <loc>https://alnajmalsaeed.com/career</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/career</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/career"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/career?lang=ar"/>
   </url>
   <url>
-    <loc>https://alnajmalsaeed.com/contact</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/contact</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/contact?lang=ar"/>
   </url>
   <url>
-    <loc>https://alnajmalsaeed.com/faq</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://alsaeedstar.com/faq</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/faq?lang=ar"/>
+  </url>
+  <url>
+    <loc>https://alsaeedstar.com/location/riyadh</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alsaeedstar.com/location/riyadh"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://alsaeedstar.com/location/riyadh?lang=ar"/>
   </url>
 </urlset>

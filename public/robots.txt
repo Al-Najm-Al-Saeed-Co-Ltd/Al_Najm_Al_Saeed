@@ -2,12 +2,20 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://alnajmalsaeed.com/sitemap.xml
+Sitemap: https://alsaeedstar.com/sitemap.xml
 
 # Disallow admin areas
 Disallow: /admin/
 Disallow: /storage/
 Disallow: /vendor/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /routes/
+Disallow: /tests/
+Disallow: /app/
+Disallow: /resources/views/
+Disallow: /node_modules/
 
 # Allow important pages
 Allow: /
@@ -17,6 +25,12 @@ Allow: /hvac
 Allow: /career
 Allow: /contact
 Allow: /faq
+Allow: /location/
+Allow: /assets/
+Allow: /build/
 
 # Crawl delay
 Crawl-delay: 1
+
+# Additional directives for better SEO
+Host: https://alsaeedstar.com

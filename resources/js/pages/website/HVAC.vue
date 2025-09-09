@@ -1,9 +1,9 @@
 <template>
   <WebsiteLayout>
     <SEO
-      title="Professional HVAC Services & Pricing - Al Najm Al Saeed Co. Ltd."
-      description="Professional HVAC services with transparent pricing in Saudi Arabia. AC installation, repair, maintenance, and emergency services. View our detailed pricing for all HVAC services including deep cleaning, repairs, and installations."
-      keywords="HVAC services pricing, AC repair Saudi Arabia, HVAC installation cost, AC maintenance pricing, HVAC technician services, air conditioning repair, HVAC emergency services, AC deep cleaning"
+      title="HVAC Contractor Riyadh | تكييف الرياض | AC Repair & Installation Services"
+      description="Professional HVAC contractor in Riyadh offering AC repair, installation, and maintenance services. Emergency HVAC services, central AC installation, split AC services. Licensed HVAC company serving all Riyadh districts."
+      keywords="HVAC Contractor Riyadh, تكييف الرياض, AC Repair Riyadh, HVAC Installation Riyadh, صيانة تكييف الرياض, تركيب تكييف الرياض, Central AC Riyadh, Split AC Installation Riyadh, Emergency AC Repair Riyadh, HVAC Maintenance Riyadh"
       url="/hvac"
       :structured-data="hvacStructuredData"
     />
@@ -45,32 +45,50 @@ import { useScrollAnimations } from '@/composables/useScrollAnimations'
 // Structured data for HVAC page
 const hvacStructuredData = {
   "@type": "Service",
-  "name": "HVAC Services with Pricing",
-  "description": "Professional HVAC services with transparent pricing including installation, repair, maintenance, and emergency services",
+  "name": "HVAC Contractor Riyadh - Professional HVAC Services",
+  "description": "Professional HVAC contractor in Riyadh offering AC repair, installation, maintenance, and emergency services. Licensed HVAC company serving all Riyadh districts.",
   "provider": {
     "@type": "Organization",
-    "name": "Al Najm Al Saeed Co. Ltd."
+    "name": "Al Najm Al Saeed Co. Ltd.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Riyadh",
+      "addressCountry": "SA"
+    },
+    "telephone": "+966-53-616-1198"
   },
+  "areaServed": {
+    "@type": "City",
+    "name": "Riyadh"
+  },
+  "serviceType": "HVAC Services",
   "offers": [
     {
       "@type": "Offer",
-      "name": "AC Deep Cleaning",
-      "description": "Professional AC deep cleaning services",
-      "price": "69-299",
-      "priceCurrency": "SAR"
-    },
-    {
-      "@type": "Offer",
-      "name": "HVAC Repair Services",
-      "description": "Fast and reliable HVAC repair services",
+      "name": "AC Repair Riyadh",
+      "description": "Professional AC repair services in Riyadh",
       "price": "59-109",
       "priceCurrency": "SAR"
     },
     {
       "@type": "Offer",
-      "name": "HVAC Installation",
-      "description": "Professional HVAC system installation",
+      "name": "HVAC Installation Riyadh",
+      "description": "Professional HVAC system installation in Riyadh",
       "price": "109-249",
+      "priceCurrency": "SAR"
+    },
+    {
+      "@type": "Offer",
+      "name": "HVAC Maintenance Riyadh",
+      "description": "Regular HVAC maintenance services in Riyadh",
+      "price": "69-299",
+      "priceCurrency": "SAR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Emergency AC Repair Riyadh",
+      "description": "24/7 emergency AC repair services in Riyadh",
+      "price": "150-400",
       "priceCurrency": "SAR"
     }
   ]

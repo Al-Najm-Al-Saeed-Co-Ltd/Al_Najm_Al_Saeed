@@ -59,6 +59,14 @@ class BasicController extends Controller
     }
 
     /**
+     * Display the Riyadh location page.
+     */
+    public function locationRiyadh()
+    {
+        return Inertia::render('website/LocationRiyadh');
+    }
+
+    /**
      * Handle contact form submission.
      */
     public function submitContact(Request $request)

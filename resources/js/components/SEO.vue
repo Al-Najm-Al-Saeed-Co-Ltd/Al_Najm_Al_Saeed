@@ -29,7 +29,18 @@
     <!-- Additional Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#10B981">
+    <meta name="geo.region" content="SA">
+    <meta name="geo.placename" content="Riyadh">
+    <meta name="geo.position" content="24.7136;46.6753">
+    <meta name="ICBM" content="24.7136, 46.6753">
+    <meta name="DC.title" :content="title">
+    <meta name="DC.description" :content="description">
+    <meta name="DC.language" content="en">
+    <meta name="DC.coverage" content="Saudi Arabia">
+    <meta name="DC.subject" content="HVAC Services, Construction Services, Saudi Arabia">
     <link rel="canonical" :href="canonicalUrl">
+    <link rel="alternate" hreflang="en" :href="canonicalUrl">
+    <link rel="alternate" hreflang="ar" :href="canonicalUrl + '?lang=ar'">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -75,7 +86,7 @@ const props = defineProps({
 })
 
 const canonicalUrl = computed(() => {
-  const baseUrl = 'https://alnajmalsaeed.com'
+  const baseUrl = 'https://alsaeedstar.com'
   return `${baseUrl}${props.url}`
 })
 
@@ -85,8 +96,8 @@ const structuredData = computed(() => {
     "@type": "Organization",
     "name": "Al Najm Al Saeed Co. Ltd.",
     "description": "Professional HVAC services in Saudi Arabia. Heating, ventilation, and air conditioning installation, repair, and maintenance.",
-    "url": "https://alnajmalsaeed.com",
-    "logo": "https://alnajmalsaeed.com/assets/website/logo.png",
+    "url": "https://alsaeedstar.com",
+    "logo": "https://alsaeedstar.com/assets/website/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+966-53-616-1198",
@@ -104,6 +115,9 @@ const structuredData = computed(() => {
       "https://www.facebook.com/alnajmalsaeed",
       "https://www.instagram.com/alnajmalsaeed"
     ],
+    "foundingDate": "2010",
+    "numberOfEmployees": "50-100",
+    "slogan": "Create your dream with us, where every step brings joy!",
     "serviceArea": {
       "@type": "Country",
       "name": "Saudi Arabia"

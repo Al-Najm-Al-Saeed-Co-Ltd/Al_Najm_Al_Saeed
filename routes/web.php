@@ -11,6 +11,7 @@ Route::get('/services', [BasicController::class, 'services'])->name('website.ser
 Route::get('/hvac', [BasicController::class, 'hvac'])->name('website.hvac');
 Route::get('/career', [BasicController::class, 'career'])->name('website.career');
 Route::get('/contact', [BasicController::class, 'contact'])->name('website.contact');
+Route::get('/location/riyadh', [BasicController::class, 'locationRiyadh'])->name('website.location.riyadh');
 
 // Website Form Submissions
 Route::post('/contact', [BasicController::class, 'submitContact'])->name('website.contact.submit');
