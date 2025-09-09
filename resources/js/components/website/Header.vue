@@ -7,29 +7,29 @@
           <div class="flex items-center">
             <div class="flex-shrink-0 flex items-center">
               <Link :href="home()" class="flex items-center">
-                <img src="/assets/website/logo-black.svg" alt="Al Najm Al Saeed" class="h-12 sm:h-14 w-auto"
-                  loading="eager" />
+              <img src="/assets/website/logo-black.svg" alt="Al Najm Al Saeed" class="h-12 sm:h-14 w-auto"
+                loading="eager" />
               </Link>
             </div>
           </div>
 
           <!-- Desktop Navigation -->
-          <nav class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
+          <div class="hidden md:flex items-center space-x-8" aria-label="Main navigation">
             <Link v-for="item in navigationItems" :key="item.href" :href="item.href"
               :class="getNavLinkClasses(item.isButton, false, item.href)" @click="handleNavClick(false)">
-              {{ item.label }}
+            {{ item.label }}
             </Link>
-          </nav>
+          </div>
 
           <!-- Mobile menu button -->
           <div class="md:hidden flex items-center">
             <button @click="toggleMobileMenu"
-              class="text-gray-700 hover:text-brand-green transition-all duration-300 relative w-6 h-6 hover:scale-110 active:scale-95"
+              class="text-gray-700 hover:text-brand-green transition-all duration-200 ease-out relative w-6 h-6 hover:scale-105 active:scale-98"
               :aria-expanded="isMobileMenuOpen" aria-label="Toggle mobile menu">
-              <Transition enter-active-class="transition-all duration-300 ease-out"
-                enter-from-class="opacity-0 rotate-90 scale-75" enter-to-class="opacity-100 rotate-0 scale-100"
-                leave-active-class="transition-all duration-300 ease-in"
-                leave-from-class="opacity-100 rotate-0 scale-100" leave-to-class="opacity-0 -rotate-90 scale-75"
+              <Transition enter-active-class="transition-all duration-200 ease-out"
+                enter-from-class="opacity-0 rotate-45 scale-90" enter-to-class="opacity-100 rotate-0 scale-100"
+                leave-active-class="transition-all duration-200 ease-in"
+                leave-from-class="opacity-100 rotate-0 scale-100" leave-to-class="opacity-0 -rotate-45 scale-90"
                 mode="out-in">
                 <Menu v-if="!isMobileMenuOpen" key="menu" class="w-6 h-6 absolute inset-0" />
                 <X v-else key="close" class="w-6 h-6 absolute inset-0" />
@@ -40,14 +40,14 @@
       </div>
 
       <!-- Mobile Navigation -->
-      <Transition enter-active-class="transition-all duration-300 ease-out" enter-from-class="opacity-0 max-h-0"
-        enter-to-class="opacity-100 max-h-96" leave-active-class="transition-all duration-300 ease-in"
+      <Transition enter-active-class="transition-all duration-250 ease-out" enter-from-class="opacity-0 max-h-0"
+        enter-to-class="opacity-100 max-h-96" leave-active-class="transition-all duration-200 ease-in"
         leave-from-class="opacity-100 max-h-96" leave-to-class="opacity-0 max-h-0">
         <div v-show="isMobileMenuOpen" class="md:hidden border-t border-white/20 overflow-hidden">
           <nav class="px-6 py-4 space-y-2" aria-label="Mobile navigation">
             <Link v-for="item in navigationItems" :key="item.href" :href="item.href"
               :class="getNavLinkClasses(item.isButton, true, item.href)" @click="handleNavClick(true)">
-              {{ item.label }}
+            {{ item.label }}
             </Link>
           </nav>
         </div>
@@ -75,10 +75,9 @@ const navigationItems = [
   { href: '#quote', label: 'Get A Quote', isButton: true }
 ]
 
-// Active route detection
 const isCurrentRoute = computed(() => (href) => {
   if (typeof href === 'string' && href.startsWith('#')) {
-    return false // Don't mark anchor links as active
+    return false
   }
   return urlIsActive(href, page.url)
 })
@@ -94,7 +93,7 @@ const closeMobileMenu = () => {
 }
 
 const getNavLinkClasses = (isButton, isMobile, href) => {
-  const baseClasses = 'font-medium transition duration-300'
+  const baseClasses = 'font-medium transition duration-200 ease-out'
   const isActive = isCurrentRoute.value(href)
 
   if (isButton) {
