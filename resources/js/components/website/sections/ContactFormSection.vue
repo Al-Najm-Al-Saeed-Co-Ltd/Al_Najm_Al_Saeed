@@ -160,8 +160,6 @@ const submitContactForm = async () => {
 
   try {
     // Handle form submission
-    console.log('Contact form submitted:', contactForm)
-
     // Show success notification
     success('Thank you for your message! We will get back to you soon.')
 
@@ -170,8 +168,8 @@ const submitContactForm = async () => {
       contactForm[key] = ''
     })
   } catch (error) {
-    console.error('Contact form error:', error)
     // Handle validation errors here if needed
+    error('Failed to submit form. Please try again.')
   } finally {
     isSubmittingContact.value = false
   }

@@ -228,8 +228,8 @@ const contactStructuredData = {
       "addressCountry": "SA",
       "addressLocality": "Riyadh"
     },
-    "email": "info@alnajmalsaeed.com",
-    "url": "https://alnajmalsaeed.com"
+    "email": "info@alsaeedstar.com",
+    "url": "https://alsaeedstar.com"
   }
 }
 
@@ -278,7 +278,6 @@ const submitContactForm = async () => {
       }
     })
   } catch (error) {
-    console.error('Form submission error:', error)
     isSubmitting.value = false
   }
 }
