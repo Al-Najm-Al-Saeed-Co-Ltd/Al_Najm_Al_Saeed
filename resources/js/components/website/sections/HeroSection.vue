@@ -7,12 +7,12 @@
         <!-- Left Column - Text Content -->
         <div class="text-white order-2 lg:order-1">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Best HVAC Maintenance Company Riyadh,
-            <span class="text-white">where every step brings comfort!</span>
+            Create your dream with us,
+            <span class="text-white">where every step brings joy!</span>
           </h1>
           <p class="text-base sm:text-lg md:text-xl mb-8 text-gray-100 leading-relaxed">
-            We are the best HVAC maintenance company in Riyadh, experts in Construction, HVAC Maintenance, and IT Solutions.
-            Professional HVAC maintenance services for all your comfort needs.
+            We are the Experts in Construction, Maintenance, HVAC, and IT Solutions.
+            Innovative solutions for a diverse range of needs.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12">
             <a href="#services"
@@ -36,17 +36,16 @@
                   <picture>
                     <source media="(max-width: 640px)" :srcset="getResponsiveImage(slide.image, 400)">
                     <source media="(max-width: 1024px)" :srcset="getResponsiveImage(slide.image, 600)">
-                    <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center" 
-                         :loading="index === 0 ? 'eager' : 'lazy'"
-                         :fetchpriority="index === 0 ? 'high' : 'auto'"
-                         width="800" height="533">
+                    <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center"
+                      :loading="index === 0 ? 'eager' : 'lazy'" :fetchpriority="index === 0 ? 'high' : 'auto'"
+                      width="800" height="533">
                   </picture>
                 </div>
               </div>
-              
+
               <!-- Pagination -->
               <div class="swiper-pagination"></div>
-              
+
               <!-- Navigation -->
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
@@ -59,8 +58,7 @@
     <!-- Floating Elements -->
     <div class="absolute top-16 sm:top-20 left-4 sm:left-10 w-16 h-16 sm:w-20 sm:h-20 rounded-full"
       style="background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.1;"></div>
-    <div
-      class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full"
+    <div class="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 w-24 h-24 sm:w-32 sm:h-32 rounded-full"
       style="animation-delay: 2s; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); --tw-bg-opacity: 0.05;">
     </div>
   </section>
@@ -181,7 +179,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-
 /* Swiper Custom Styles */
 .hero-swiper {
   width: 100%;
@@ -255,13 +252,14 @@ onUnmounted(() => {
 
 /* Small screens (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
+
   .hero-swiper :deep(.swiper-button-next),
   .hero-swiper :deep(.swiper-button-prev) {
     width: 40px;
     height: 40px;
     margin-top: -20px;
   }
-  
+
   .hero-swiper :deep(.swiper-button-next::after),
   .hero-swiper :deep(.swiper-button-prev::after) {
     font-size: 16px;
@@ -270,18 +268,19 @@ onUnmounted(() => {
 
 /* Mobile screens (576px to 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
+
   .hero-swiper :deep(.swiper-button-next),
   .hero-swiper :deep(.swiper-button-prev) {
     width: 36px;
     height: 36px;
     margin-top: -18px;
   }
-  
+
   .hero-swiper :deep(.swiper-button-next::after),
   .hero-swiper :deep(.swiper-button-prev::after) {
     font-size: 14px;
   }
-  
+
   .hero-swiper :deep(.swiper-pagination-bullet) {
     width: 10px;
     height: 10px;
@@ -290,23 +289,24 @@ onUnmounted(() => {
 
 /* Extra small screens (below 576px) */
 @media (max-width: 575px) {
+
   .hero-swiper :deep(.swiper-button-next),
   .hero-swiper :deep(.swiper-button-prev) {
     width: 32px;
     height: 32px;
     margin-top: -16px;
   }
-  
+
   .hero-swiper :deep(.swiper-button-next::after),
   .hero-swiper :deep(.swiper-button-prev::after) {
     font-size: 12px;
   }
-  
+
   .hero-swiper :deep(.swiper-pagination-bullet) {
     width: 8px;
     height: 8px;
   }
-  
+
   .hero-swiper :deep(.swiper-pagination) {
     bottom: 15px;
   }

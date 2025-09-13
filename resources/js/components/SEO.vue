@@ -37,7 +37,7 @@
     <meta name="DC.description" :content="description">
     <meta name="DC.language" content="en">
     <meta name="DC.coverage" content="Saudi Arabia">
-    <meta name="DC.subject" content="HVAC Services, Construction Services, Saudi Arabia">
+    <meta name="DC.subject" content="Best HVAC Maintenance Company Riyadh, HVAC Services, Air Conditioning Maintenance, Saudi Arabia">
     <link rel="canonical" :href="canonicalUrl">
     <link rel="alternate" hreflang="en" :href="canonicalUrl">
     <link rel="alternate" hreflang="ar" :href="canonicalUrl + '?lang=ar'">
@@ -65,7 +65,7 @@ const props = defineProps({
   },
   keywords: {
     type: String,
-    default: 'HVAC, heating, ventilation, air conditioning, Saudi Arabia, Riyadh, installation, repair, maintenance, commercial HVAC, residential HVAC'
+    default: 'best hvac maintenance company riyadh, HVAC maintenance Riyadh, air conditioning maintenance Saudi Arabia, heating repair Riyadh, commercial HVAC services Riyadh, residential HVAC maintenance, HVAC installation Riyadh, air conditioning repair Riyadh, HVAC company Saudi Arabia, professional HVAC services'
   },
   image: {
     type: String,
@@ -95,7 +95,7 @@ const structuredData = computed(() => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Al Najm Al Saeed Co. Ltd.",
-    "description": "Professional HVAC services in Saudi Arabia. Heating, ventilation, and air conditioning installation, repair, and maintenance.",
+    "description": "Best HVAC maintenance company in Riyadh. Professional heating, ventilation, and air conditioning installation, repair, and maintenance services in Saudi Arabia.",
     "url": "https://alsaeedstar.com",
     "logo": "https://alsaeedstar.com/assets/website/logo.png",
     "contactPoint": {
@@ -108,8 +108,19 @@ const structuredData = computed(() => {
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "SA",
-      "addressLocality": "Riyadh"
+      "addressLocality": "Riyadh",
+      "addressRegion": "Riyadh Province"
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Riyadh",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "Saudi Arabia"
+        }
+      }
+    ],
     "sameAs": [
       "https://www.linkedin.com/company/al-najm-al-saeed",
       "https://www.facebook.com/alnajmalsaeed",
@@ -124,7 +135,7 @@ const structuredData = computed(() => {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Comprehensive HVAC Services",
+      "name": "Best HVAC Maintenance Services in Riyadh",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -146,8 +157,8 @@ const structuredData = computed(() => {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Preventive Maintenance",
-            "description": "Regular maintenance programs to ensure optimal system performance, energy efficiency, and extended equipment lifespan"
+            "name": "Best HVAC Preventive Maintenance in Riyadh",
+            "description": "Professional preventive maintenance programs in Riyadh to ensure optimal HVAC system performance, energy efficiency, and extended equipment lifespan"
           }
         },
         {
