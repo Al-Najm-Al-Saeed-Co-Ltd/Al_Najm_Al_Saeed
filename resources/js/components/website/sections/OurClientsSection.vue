@@ -17,16 +17,12 @@
 
       <!-- Client Logos Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
-        <div 
-          v-for="(client, index) in clients" 
-          :key="client.id"
-          :class="[
-            'transition-all duration-1000',
-            `delay-${index * 100}`,
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          ]" 
-          class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
-        >
+        <div v-for="(client, index) in clients" :key="client.id" :class="[
+          'transition-all duration-1000',
+          `delay-${index * 100}`,
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        ]"
+          class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
           <div class="text-center">
             <div :class="`w-16 h-16 ${client.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`">
               <component :is="client.icon" :class="`w-8 h-8 ${client.iconColor}`" />
@@ -42,7 +38,7 @@
 </template>
 
 <script setup>
-import { Building, Building2 } from 'lucide-vue-next'
+import { Building, Building2, Users, Briefcase, Shield, Award, Truck, Zap, Heart, Globe, Home, Wrench } from 'lucide-vue-next'
 
 // Props
 const props = defineProps({
@@ -56,68 +52,107 @@ const props = defineProps({
 const clients = [
   {
     id: 1,
-    icon: Building,
+    icon: Award,
     bgColor: 'bg-blue-100',
     iconColor: 'text-blue-600',
-    name: 'Tech Solutions Inc.',
-    industry: 'Technology'
+    name: 'Ministry Of Sports',
+    industry: 'Government'
   },
   {
     id: 2,
-    icon: Building2,
+    icon: Globe,
     bgColor: 'bg-green-100',
     iconColor: 'text-green-600',
-    name: 'BuildCorp',
-    industry: 'Construction'
+    name: 'Al Qussie International Company',
+    industry: 'International'
   },
   {
     id: 3,
-    icon: Building2,
+    icon: Building,
     bgColor: 'bg-purple-100',
     iconColor: 'text-purple-600',
-    name: 'Modern Enterprises',
-    industry: 'Manufacturing'
+    name: 'M Al-Shawi Est.',
+    industry: 'Construction'
   },
   {
     id: 4,
-    icon: Building,
+    icon: Building2,
     bgColor: 'bg-orange-100',
     iconColor: 'text-orange-600',
-    name: 'Healthcare Plus',
-    industry: 'Healthcare'
+    name: 'Al Majal Al Arabi Group',
+    industry: 'Group'
   },
   {
     id: 5,
-    icon: Building2,
+    icon: Zap,
     bgColor: 'bg-red-100',
     iconColor: 'text-red-600',
-    name: 'Retail Group',
-    industry: 'Retail'
+    name: 'Zamil Air Conditioners',
+    industry: 'HVAC'
   },
   {
     id: 6,
-    icon: Building,
+    icon: Wrench,
     bgColor: 'bg-indigo-100',
     iconColor: 'text-indigo-600',
-    name: 'Finance Corp',
-    industry: 'Finance'
+    name: 'Madarat Alwasat For Contracting Company',
+    industry: 'Contracting'
   },
   {
     id: 7,
     icon: Building2,
     bgColor: 'bg-teal-100',
     iconColor: 'text-teal-600',
-    name: 'Education Hub',
-    industry: 'Education'
+    name: 'Al Taj Al Mudee Contracting Co.',
+    industry: 'Contracting'
   },
   {
     id: 8,
-    icon: Building,
+    icon: Users,
     bgColor: 'bg-pink-100',
     iconColor: 'text-pink-600',
-    name: 'Hospitality Group',
-    industry: 'Hospitality'
+    name: 'Riyadh Chamber',
+    industry: 'Chamber'
+  },
+  {
+    id: 9,
+    icon: Building,
+    bgColor: 'bg-yellow-100',
+    iconColor: 'text-yellow-600',
+    name: 'Al Mabani General Contractors',
+    industry: 'Contracting'
+  },
+  {
+    id: 10,
+    icon: Heart,
+    bgColor: 'bg-cyan-100',
+    iconColor: 'text-cyan-600',
+    name: 'Saudi Cycling Federation',
+    industry: 'Sports'
+  },
+  {
+    id: 11,
+    icon: Truck,
+    bgColor: 'bg-emerald-100',
+    iconColor: 'text-emerald-600',
+    name: 'Arrouq Al Jouz Trading Company',
+    industry: 'Trading'
+  },
+  {
+    id: 12,
+    icon: Briefcase,
+    bgColor: 'bg-rose-100',
+    iconColor: 'text-rose-600',
+    name: 'Nasma Al Farris contracting & Fabrication',
+    industry: 'Fabrication'
+  },
+  {
+    id: 13,
+    icon: Zap,
+    bgColor: 'bg-violet-100',
+    iconColor: 'text-violet-600',
+    name: 'Awwad Arabia Refrigeration & Air Conditioning LLC',
+    industry: 'HVAC'
   }
 ]
 </script>
-
