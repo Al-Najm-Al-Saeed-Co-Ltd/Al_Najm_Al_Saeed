@@ -42,18 +42,143 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
+
+      <!-- Testimonial Submission Form -->
+      <div class="mt-20">
+        <div class="max-w-2xl mx-auto">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Share Your Experience</h3>
+            <p class="text-gray-600">
+              We'd love to hear about your experience with our services
+            </p>
+          </div>
+
+          <form @submit.prevent="submitTestimonialForm" class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                <input
+                  id="name"
+                  v-model="form.name"
+                  type="text"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
+                  placeholder="Your full name"
+                />
+                <div v-if="form.errors.name" class="mt-1 text-sm text-red-600">
+                  {{ form.errors.name }}
+                </div>
+              </div>
+
+              <div>
+                <label for="position" class="block text-sm font-medium text-gray-700 mb-2">Position *</label>
+                <input
+                  id="position"
+                  v-model="form.position"
+                  type="text"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
+                  placeholder="Your job title"
+                />
+                <div v-if="form.errors.position" class="mt-1 text-sm text-red-600">
+                  {{ form.errors.position }}
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+              <input
+                id="company"
+                v-model="form.company"
+                type="text"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
+                placeholder="Your company name"
+              />
+              <div v-if="form.errors.company" class="mt-1 text-sm text-red-600">
+                {{ form.errors.company }}
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label for="quote" class="block text-sm font-medium text-gray-700 mb-2">Your Testimonial *</label>
+              <textarea
+                id="quote"
+                v-model="form.quote"
+                required
+                rows="4"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
+                placeholder="Tell us about your experience..."
+              ></textarea>
+              <div v-if="form.errors.quote" class="mt-1 text-sm text-red-600">
+                {{ form.errors.quote }}
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2">Rating *</label>
+              <div class="flex items-center space-x-2">
+                <Star 
+                  v-for="(filled, index) in renderStars(form.rating)" 
+                  :key="index"
+                  class="w-6 h-6 text-yellow-400 fill-current cursor-pointer"
+                  @click="form.rating = index + 1"
+                />
+                <Star 
+                  v-for="(filled, index) in renderStars(5 - form.rating)" 
+                  :key="index + form.rating"
+                  class="w-6 h-6 text-gray-300 cursor-pointer"
+                  @click="form.rating = index + form.rating + 1"
+                />
+                <span class="ml-2 text-sm text-gray-600">{{ form.rating }}/5</span>
+              </div>
+              <div v-if="form.errors.rating" class="mt-1 text-sm text-red-600">
+                {{ form.errors.rating }}
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <label for="avatar" class="block text-sm font-medium text-gray-700 mb-2">Profile Photo (Optional)</label>
+              <input
+                id="avatar"
+                type="file"
+                accept="image/*"
+                @change="handleAvatarChange"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green focus:border-transparent"
+              />
+              <div v-if="form.errors.avatar" class="mt-1 text-sm text-red-600">
+                {{ form.errors.avatar }}
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              :disabled="form.processing"
+              class="w-full bg-brand-green text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50"
+            >
+              {{ form.processing ? 'Submitting...' : 'Submit Testimonial' }}
+            </button>
+
+            <div v-if="form.recentlySuccessful" class="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+              Thank you for your testimonial! It will be reviewed and published soon.
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { Star, User } from 'lucide-vue-next'
 import { Swiper } from 'swiper'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { useForm } from '@inertiajs/vue3'
+import { submitTestimonial } from '@/actions/App/Http/Controllers/Website/BasicController'
 
 // Props
 const props = defineProps({
@@ -102,6 +227,36 @@ const testimonials = [
     position: "IT Manager, Finance Corp"
   }
 ]
+
+// Form handling
+const form = useForm({
+  name: '',
+  position: '',
+  company: '',
+  quote: '',
+  rating: 5,
+  avatar: null,
+});
+
+const submitTestimonialForm = () => {
+  form.post(submitTestimonial().url, {
+    forceFormData: true,
+    onSuccess: () => {
+      form.reset();
+    }
+  });
+};
+
+const handleAvatarChange = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    form.avatar = file;
+  }
+};
+
+const renderStars = (rating) => {
+  return Array.from({ length: 5 }, (_, i) => i < rating);
+};
 
 // Swiper instance
 let swiper = null

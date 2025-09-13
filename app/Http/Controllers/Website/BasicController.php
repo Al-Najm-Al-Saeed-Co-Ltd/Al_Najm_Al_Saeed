@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Website;
 
+use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactFormMail;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 
@@ -99,7 +102,7 @@ class BasicController extends Controller
 
             return back()->with('success', 'Thank you for your message! We will get back to you soon.');
         } catch (\Exception $e) {
-            \Log::error('Contact form email error: ' . $e->getMessage());
+            Log::error('Contact form email error: ' . $e->getMessage());
             return back()->with('error', 'There was an error sending your message. Please try again or contact us directly.');
         }
     }
@@ -144,6 +147,7 @@ class BasicController extends Controller
         return back()->with('success', 'Thank you for subscribing to our newsletter!');
     }
 
+
     /**
      * Get company statistics for display.
      */
@@ -164,31 +168,22 @@ class BasicController extends Controller
      */
     public function getTestimonials()
     {
-        // TODO: Implement dynamic testimonials
-        // This could fetch from database
-        return response()->json([
-            [
-                'id' => 1,
-                'name' => 'Ahmed Al-Rashid',
-                'position' => 'CEO, Tech Solutions Inc.',
-                'content' => 'Al Najm Al Saeed delivered exceptional HVAC services for our office building. Their team was professional, efficient, and the results exceeded our expectations.',
-                'rating' => 5,
-            ],
-            [
-                'id' => 2,
-                'name' => 'Sarah Johnson',
-                'position' => 'Project Manager, BuildCorp',
-                'content' => 'The construction quality and attention to detail were outstanding. They completed our project on time and within budget. Highly recommended!',
-                'rating' => 5,
-            ],
-            [
-                'id' => 3,
-                'name' => 'Mohammed Al-Zahra',
-                'position' => 'IT Director, Modern Enterprises',
-                'content' => 'Their IT solutions transformed our business operations. The team was knowledgeable and provided excellent ongoing support.',
-                'rating' => 5,
-            ],
-        ]);
+        $testimonials = Testimonial::active()
+            ->ordered()
+            ->get()
+            ->map(function ($testimonial) {
+                return [
+                    'id' => $testimonial->id,
+                    'name' => $testimonial->name,
+                    'position' => $testimonial->position,
+                    'company' => $testimonial->company,
+                    'content' => $testimonial->quote,
+                    'rating' => $testimonial->rating,
+                    'avatar' => $testimonial->avatar ? FileUploader::getUrl($testimonial->avatar) : null,
+                ];
+            });
+
+        return response()->json($testimonials);
     }
 
     /**

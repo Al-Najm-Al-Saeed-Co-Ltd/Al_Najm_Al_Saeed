@@ -1,0 +1,9 @@
+<template>
+  <DialogDescription>
+    <slot />
+  </DialogDescription>
+</template>
+
+<script setup lang="ts">
+import { DialogDescription } from '@/components/ui/dialog'
+</script>
