@@ -1,8 +1,8 @@
 <template>
   <WebsiteLayout>
-    <SEO title="Best HVAC Construction Company Riyadh | مقاول تكييف وبناء الرياض | Al Najm Al Saeed"
-      description="Leading HVAC and construction company in Riyadh, Saudi Arabia. Professional HVAC installation, repair, maintenance, and building construction services. 24/7 emergency support. Licensed contractor serving Riyadh and all Saudi Arabia."
-      keywords="Best HVAC Construction Company Riyadh, مقاول تكييف وبناء الرياض, HVAC Contractor Riyadh, Construction Company Riyadh, AC Repair Riyadh, HVAC Installation Riyadh, Building Contractor Riyadh, MEP Contractor Riyadh, مقاول تكييف الرياض, شركة مقاولات الرياض"
+    <SEO title="Best HVAC Maintenance Company Riyadh | مقاول صيانة تكييف الرياض | Al Najm Al Saeed"
+      description="Best HVAC maintenance company in Riyadh, Saudi Arabia. Professional HVAC maintenance, repair, installation services. 24/7 emergency HVAC support. Licensed HVAC contractor serving all Riyadh districts with expert maintenance solutions."
+      keywords="Best HVAC Maintenance Company Riyadh, مقاول صيانة تكييف الرياض, HVAC Maintenance Riyadh, Best HVAC Company Riyadh, HVAC Service Riyadh, AC Maintenance Riyadh, HVAC Repair Riyadh, HVAC Installation Riyadh, مقاول تكييف الرياض, شركة صيانة تكييف الرياض"
       url="/" :structured-data="homeStructuredData" />
 
     <!-- Hero Section -->
@@ -58,7 +58,7 @@ const { visibleSections, initialize, cleanup } = useScrollAnimations()
 // Structured data for Home page
 const homeStructuredData = {
   "@type": "WebSite",
-  "name": "Al Najm Al Saeed Co. Ltd. - Best HVAC Construction Company Riyadh",
+  "name": "Al Najm Al Saeed Co. Ltd. - Best HVAC Maintenance Company Riyadh",
   "url": "https://alsaeedstar.com",
   "potentialAction": {
     "@type": "SearchAction",
@@ -68,7 +68,8 @@ const homeStructuredData = {
   "mainEntity": {
     "@type": "LocalBusiness",
     "name": "Al Najm Al Saeed Co. Ltd.",
-    "alternateName": "مقاول تكييف وبناء الرياض",
+    "alternateName": "مقاول صيانة تكييف الرياض",
+    "description": "Best HVAC maintenance company in Riyadh, Saudi Arabia. Professional HVAC maintenance, repair, and installation services.",
     "image": "https://alsaeedstar.com/assets/website/logo.png",
     "telephone": "+966-53-616-1198",
     "email": "info@alsaeedstar.com",
@@ -96,8 +97,24 @@ const homeStructuredData = {
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "HVAC and Construction Services",
+      "name": "Best HVAC Maintenance Services Riyadh",
       "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "HVAC Maintenance Riyadh",
+            "description": "Professional HVAC maintenance services in Riyadh - best maintenance company"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AC Maintenance Riyadh",
+            "description": "Expert AC maintenance and repair services in Riyadh"
+          }
+        },
         {
           "@type": "Offer",
           "itemOffered": {
@@ -110,8 +127,8 @@ const homeStructuredData = {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Construction Services Riyadh",
-            "description": "Building construction and renovation services in Riyadh"
+            "name": "Emergency HVAC Services Riyadh",
+            "description": "24/7 emergency HVAC maintenance and repair services in Riyadh"
           }
         }
       ]

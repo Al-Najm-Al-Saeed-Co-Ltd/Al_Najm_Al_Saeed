@@ -60,7 +60,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
 import { Link, usePage } from '@inertiajs/vue3'
-import { home, about, services, hvac, career, contact } from '@/routes/website'
+import { home, about, service, hvac, career, contact } from '@/routes/website'
 import { urlIsActive } from '@/lib/utils'
 
 const page = usePage()
@@ -68,7 +68,7 @@ const page = usePage()
 const navigationItems = [
   { href: home(), label: 'Home', isButton: false },
   { href: about(), label: 'About', isButton: false },
-  { href: services(), label: 'Services', isButton: false },
+  { href: service(), label: 'Services', isButton: false },
   { href: hvac(), label: 'HVAC', isButton: false },
   { href: career(), label: 'Career', isButton: false },
   { href: contact(), label: 'Contact', isButton: false },

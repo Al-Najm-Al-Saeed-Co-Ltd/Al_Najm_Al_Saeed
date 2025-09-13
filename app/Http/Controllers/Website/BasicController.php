@@ -27,9 +27,9 @@ class BasicController extends Controller
     }
 
     /**
-     * Display the services page.
+     * Display the service page.
      */
-    public function services()
+    public function service()
     {
         return Inertia::render('website/Services');
     }

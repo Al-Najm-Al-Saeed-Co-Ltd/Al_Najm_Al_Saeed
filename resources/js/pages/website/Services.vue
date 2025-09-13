@@ -4,7 +4,7 @@
       title="Construction Company Riyadh | شركة مقاولات الرياض | Building Contractor Services"
       description="Leading construction company in Riyadh offering building construction, renovation, and general contracting services. Licensed construction contractor serving Riyadh and all Saudi Arabia. Villa construction, commercial construction, renovation services."
       keywords="Construction Company Riyadh, شركة مقاولات الرياض, Building Contractor Riyadh, General Contractor Riyadh, مقاول بناء الرياض, Villa Construction Riyadh, Commercial Construction Riyadh, Renovation Contractor Riyadh, Construction Services Saudi Arabia"
-      url="/services"
+      url="/service"
       :structured-data="servicesStructuredData"
     />
 

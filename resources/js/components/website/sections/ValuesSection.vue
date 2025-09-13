@@ -47,7 +47,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
             </Link>
-            <Link :href="services.url()"
+            <Link :href="service.url()"
               class="inline-flex items-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-brand-green font-semibold rounded-lg transition-colors duration-200">
             View Our Services
             </Link>
@@ -60,7 +60,7 @@
 
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import { contact, services } from '@/routes/website'
+import { contact, service } from '@/routes/website'
 import { CheckCircle, Shield, Zap, Heart, Globe } from 'lucide-vue-next'
 
 defineProps({
