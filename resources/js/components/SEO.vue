@@ -65,7 +65,7 @@ const props = defineProps({
   },
   keywords: {
     type: String,
-    default: 'best hvac maintenance company riyadh, HVAC maintenance Riyadh, air conditioning maintenance Saudi Arabia, heating repair Riyadh, commercial HVAC services Riyadh, residential HVAC maintenance, HVAC installation Riyadh, air conditioning repair Riyadh, HVAC company Saudi Arabia, professional HVAC services'
+    default: 'best hvac maintenance company riyadh, HVAC maintenance Riyadh, air conditioning maintenance Saudi Arabia, heating repair Riyadh, commercial HVAC services Riyadh, residential HVAC maintenance, HVAC installation Riyadh, air conditioning repair Riyadh, HVAC company Saudi Arabia, professional HVAC services, AC maintenance Riyadh, emergency AC repair Riyadh, HVAC services in Riyadh, heating and cooling services Riyadh, HVAC companies near me, air conditioning repair Riyadh, AC repair Riyadh, HVAC contractor Riyadh, air conditioning installation Riyadh, HVAC technician Riyadh'
   },
   image: {
     type: String,
