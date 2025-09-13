@@ -6,10 +6,10 @@
           HVAC Systems
         </span>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Comprehensive HVAC Services
+          Best HVAC Maintenance Company Riyadh - Comprehensive Services
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          From new installations to emergency repairs and preventive maintenance - we provide complete HVAC solutions for your home and business
+          As the best HVAC maintenance company in Riyadh, we provide complete HVAC solutions from new installations to emergency repairs and preventive maintenance for your home and business
         </p>
       </div>
 
@@ -101,9 +101,9 @@
           <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
             <Settings class="w-8 h-8 text-green-600" />
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-4">Maintenance Services</h3>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Best HVAC Maintenance Services Riyadh</h3>
           <p class="text-gray-600 mb-6">
-            Comprehensive preventive maintenance services to extend system life and maintain peak performance.
+            As the best HVAC maintenance company in Riyadh, we provide comprehensive preventive maintenance services to extend system life and maintain peak performance.
           </p>
           <ul class="space-y-2 text-sm text-gray-600">
             <li class="flex items-center">
@@ -182,15 +182,15 @@
       <!-- Additional Info -->
       <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg">
         <div class="text-center">
-          <h3 class="text-2xl font-bold text-gray-900 mb-4">Complete HVAC Solutions</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Best HVAC Maintenance Company Riyadh - Complete Solutions</h3>
           <p class="text-gray-600 mb-6 max-w-4xl mx-auto">
-            From new installations to complex renovations and routine maintenance, we ensure your HVAC systems operate at peak performance, 
-            providing comfort, efficiency, and reliability. Our team of skilled professionals uses state-of-the-art equipment and follows 
-            industry best practices to deliver exceptional results.
+            As the best HVAC maintenance company in Riyadh, we provide complete solutions from new installations to complex renovations and routine maintenance. 
+            We ensure your HVAC systems operate at peak performance, providing comfort, efficiency, and reliability. Our team of skilled professionals uses 
+            state-of-the-art equipment and follows industry best practices to deliver exceptional results.
           </p>
           <p class="text-gray-600 max-w-4xl mx-auto">
             Whether you need emergency repairs, system upgrades, or preventive maintenance, we're committed to keeping your indoor 
-            environment comfortable and healthy year-round. Trust us to handle all your heating, cooling, and ventilation needs with precision and care.
+            environment comfortable and healthy year-round. Trust the best HVAC maintenance company in Riyadh to handle all your heating, cooling, and ventilation needs with precision and care.
           </p>
         </div>
       </div>

@@ -27,9 +27,9 @@ class BasicController extends Controller
     }
 
     /**
-     * Display the services page.
+     * Display the service page.
      */
-    public function services()
+    public function service()
     {
         return Inertia::render('website/Services');
     }
@@ -56,6 +56,14 @@ class BasicController extends Controller
     public function contact()
     {
         return Inertia::render('website/Contact');
+    }
+
+    /**
+     * Display the Riyadh location page.
+     */
+    public function locationRiyadh()
+    {
+        return Inertia::render('website/LocationRiyadh');
     }
 
     /**

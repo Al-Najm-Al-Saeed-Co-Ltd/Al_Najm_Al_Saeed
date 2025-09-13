@@ -2,17 +2,17 @@
   <!-- Hero Section -->
   <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-20 sm:pt-24">
     <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-16 sm:py-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left Column - Text Content -->
         <div class="text-white order-2 lg:order-1">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Create your dream with us,
-            <span class="text-white">where every step brings joy!</span>
+            Best HVAC Maintenance Company Riyadh,
+            <span class="text-white">where every step brings comfort!</span>
           </h1>
           <p class="text-base sm:text-lg md:text-xl mb-8 text-gray-100 leading-relaxed">
-            We are the Experts in Construction, Maintenance, HVAC, and IT Solutions.
-            Innovative solutions for a diverse range of needs.
+            We are the best HVAC maintenance company in Riyadh, experts in Construction, HVAC Maintenance, and IT Solutions.
+            Professional HVAC maintenance services for all your comfort needs.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12">
             <a href="#services"
@@ -33,7 +33,14 @@
             <div class="swiper hero-swiper rounded-2xl shadow-2xl overflow-hidden">
               <div class="swiper-wrapper">
                 <div v-for="(slide, index) in slides" :key="index" class="swiper-slide">
-                  <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center" loading="lazy">
+                  <picture>
+                    <source media="(max-width: 640px)" :srcset="getResponsiveImage(slide.image, 400)">
+                    <source media="(max-width: 1024px)" :srcset="getResponsiveImage(slide.image, 600)">
+                    <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover object-center" 
+                         :loading="index === 0 ? 'eager' : 'lazy'"
+                         :fetchpriority="index === 0 ? 'high' : 'auto'"
+                         width="800" height="533">
+                  </picture>
                 </div>
               </div>
               
@@ -74,15 +81,15 @@ const props = defineProps({
     type: Array,
     default: () => [
       {
-        image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=75&fm=webp',
         alt: 'Construction Site'
       },
       {
-        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=75&fm=webp',
         alt: 'IT Services'
       },
       {
-        image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+        image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=75&fm=webp',
         alt: 'Maintenance Work'
       }
     ]
@@ -91,6 +98,12 @@ const props = defineProps({
 
 // Swiper instance
 let swiper = null
+
+// Function to generate responsive image URLs
+const getResponsiveImage = (originalUrl, width) => {
+  // Replace the width parameter in the Unsplash URL
+  return originalUrl.replace(/w=\d+/, `w=${width}`)
+}
 
 onMounted(() => {
   // Initialize Swiper

@@ -7,10 +7,11 @@ use App\Http\Controllers\Website\BasicController;
 // Website Routes
 Route::get('/', [BasicController::class, 'home'])->name('website.home');
 Route::get('/about', [BasicController::class, 'about'])->name('website.about');
-Route::get('/services', [BasicController::class, 'services'])->name('website.services');
+Route::get('/service', [BasicController::class, 'service'])->name('website.service');
 Route::get('/hvac', [BasicController::class, 'hvac'])->name('website.hvac');
 Route::get('/career', [BasicController::class, 'career'])->name('website.career');
 Route::get('/contact', [BasicController::class, 'contact'])->name('website.contact');
+Route::get('/location/riyadh', [BasicController::class, 'locationRiyadh'])->name('website.location.riyadh');
 
 // Website Form Submissions
 Route::post('/contact', [BasicController::class, 'submitContact'])->name('website.contact.submit');

@@ -15,13 +15,19 @@
             unmatched expertise.
           </p>
           <div class="flex space-x-3 sm:space-x-4">
-            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+            <a href="https://www.facebook.com/people/Al-Star-Al-Saeed-CoLtd/61565546530111/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="text-gray-400 hover:text-white transition duration-300">
               <Facebook class="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
             <a href="#" class="text-gray-400 hover:text-white transition duration-300">
               <Twitter class="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
-            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+            <a href="https://sa.linkedin.com/company/al-saeed-star-co-ltd-%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%86%D8%AC%D9%85-%D8%A7%D9%84%D8%B3%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D8%AD%D8%AF%D9%88%D8%AF%D8%A9?trk=public_post_follow-view-profile" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="text-gray-400 hover:text-white transition duration-300">
               <Linkedin class="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
             <a href="#" class="text-gray-400 hover:text-white transition duration-300">

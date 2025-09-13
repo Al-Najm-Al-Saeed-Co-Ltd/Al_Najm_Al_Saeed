@@ -1,10 +1,10 @@
 <template>
   <WebsiteLayout>
     <SEO
-      title="HVAC Services - Installation, Repair & Maintenance | Al Najm Al Saeed Co. Ltd."
-      description="Comprehensive HVAC services in Saudi Arabia. Professional installation, repair, maintenance, and emergency services for residential and commercial properties. 24/7 support available."
-      keywords="HVAC services Saudi Arabia, HVAC installation, HVAC repair, HVAC maintenance, commercial HVAC services, residential HVAC, emergency HVAC repair, HVAC system upgrade"
-      url="/services"
+      title="Construction Company Riyadh | شركة مقاولات الرياض | Building Contractor Services"
+      description="Leading construction company in Riyadh offering building construction, renovation, and general contracting services. Licensed construction contractor serving Riyadh and all Saudi Arabia. Villa construction, commercial construction, renovation services."
+      keywords="Construction Company Riyadh, شركة مقاولات الرياض, Building Contractor Riyadh, General Contractor Riyadh, مقاول بناء الرياض, Villa Construction Riyadh, Commercial Construction Riyadh, Renovation Contractor Riyadh, Construction Services Saudi Arabia"
+      url="/service"
       :structured-data="servicesStructuredData"
     />
 
@@ -45,43 +45,63 @@ import {
 // Structured data for Services page
 const servicesStructuredData = {
   "@type": "Service",
-  "name": "HVAC Services",
-  "description": "Comprehensive HVAC services including installation, repair, maintenance, and emergency services",
+  "name": "Construction Company Riyadh - Building Contractor Services",
+  "description": "Leading construction company in Riyadh offering building construction, renovation, and general contracting services. Licensed construction contractor serving Riyadh and all Saudi Arabia.",
   "provider": {
     "@type": "Organization",
-    "name": "Al Najm Al Saeed Co. Ltd."
+    "name": "Al Najm Al Saeed Co. Ltd.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Riyadh",
+      "addressCountry": "SA"
+    },
+    "telephone": "+966-53-616-1198"
   },
-  "serviceType": "HVAC Services",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Saudi Arabia"
-  },
+  "serviceType": "Construction Services",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Riyadh"
+    },
+    {
+      "@type": "Country",
+      "name": "Saudi Arabia"
+    }
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "HVAC Services Catalog",
+    "name": "Construction Services Catalog",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "HVAC Installation",
-          "description": "Professional HVAC system installation for residential and commercial properties"
+          "name": "Building Construction Riyadh",
+          "description": "Professional building construction services in Riyadh"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "HVAC Repair",
-          "description": "Fast and reliable HVAC repair services with 24/7 emergency support"
+          "name": "Villa Construction Riyadh",
+          "description": "Custom villa construction and design services in Riyadh"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "HVAC Maintenance",
-          "description": "Preventive maintenance services to ensure optimal system performance"
+          "name": "Commercial Construction Riyadh",
+          "description": "Commercial building construction and renovation services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Renovation Contractor Riyadh",
+          "description": "Professional renovation and remodeling services in Riyadh"
         }
       }
     ]

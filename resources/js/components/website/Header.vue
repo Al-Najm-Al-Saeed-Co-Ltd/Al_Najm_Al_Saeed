@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-4 left-4 right-4 z-50">
+  <nav class="fixed top-4 left-4 right-4 z-40">
     <div class="backdrop-blur-xl bg-white/70 rounded-2xl shadow-2xl border border-white/20">
       <div class="px-6 py-2">
         <div class="flex justify-between items-center">
@@ -43,7 +43,7 @@
       <Transition enter-active-class="transition-all duration-250 ease-out" enter-from-class="opacity-0 max-h-0"
         enter-to-class="opacity-100 max-h-96" leave-active-class="transition-all duration-200 ease-in"
         leave-from-class="opacity-100 max-h-96" leave-to-class="opacity-0 max-h-0">
-        <div v-show="isMobileMenuOpen" class="md:hidden border-t border-white/20 overflow-hidden">
+        <div v-show="isMobileMenuOpen" class="md:hidden border-t border-white/20 overflow-hidden relative z-10">
           <nav class="px-6 py-4 space-y-2" aria-label="Mobile navigation">
             <Link v-for="item in navigationItems" :key="item.href" :href="item.href"
               :class="getNavLinkClasses(item.isButton, true, item.href)" @click="handleNavClick(true)">
@@ -60,7 +60,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Menu, X } from 'lucide-vue-next'
 import { Link, usePage } from '@inertiajs/vue3'
-import { home, about, services, hvac, career, contact } from '@/routes/website'
+import { home, about, service, hvac, career, contact } from '@/routes/website'
 import { urlIsActive } from '@/lib/utils'
 
 const page = usePage()
@@ -68,7 +68,7 @@ const page = usePage()
 const navigationItems = [
   { href: home(), label: 'Home', isButton: false },
   { href: about(), label: 'About', isButton: false },
-  { href: services(), label: 'Services', isButton: false },
+  { href: service(), label: 'Services', isButton: false },
   { href: hvac(), label: 'HVAC', isButton: false },
   { href: career(), label: 'Career', isButton: false },
   { href: contact(), label: 'Contact', isButton: false },
@@ -104,7 +104,7 @@ const getNavLinkClasses = (isButton, isMobile, href) => {
   }
 
   if (isMobile) {
-    return `${baseClasses} block py-2 ${isActive ? 'text-brand-green font-semibold' : 'text-gray-700 hover:text-brand-green'}`
+    return `${baseClasses} block py-3 px-4 rounded-lg ${isActive ? 'text-brand-green font-semibold bg-brand-green/20 border border-brand-green/30' : 'text-gray-700 hover:text-brand-green hover:bg-gray-50'}`
   }
 
   return `${baseClasses} ${isActive ? 'text-brand-green font-semibold' : 'text-gray-700 hover:text-brand-green'}`

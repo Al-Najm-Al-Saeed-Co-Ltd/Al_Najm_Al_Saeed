@@ -1,8 +1,8 @@
 <template>
   <WebsiteLayout>
-    <SEO title="Contact Al Najm Al Saeed Co. Ltd. - HVAC Services in Saudi Arabia"
-      description="Contact Al Najm Al Saeed Co. Ltd. for professional HVAC services in Saudi Arabia. Get free quotes, emergency services, and expert consultation. Call +966 53 616 1198 or visit our office in Riyadh."
-      keywords="contact HVAC company Saudi Arabia, HVAC consultation, HVAC emergency contact, HVAC quote request, HVAC customer service, HVAC support Saudi Arabia"
+    <SEO title="Contact Licensed HVAC Contractor Riyadh | مقاول تكييف مرخص الرياض | Get Free Quote"
+      description="Contact Al Najm Al Saeed Co. Ltd. - Licensed HVAC contractor in Riyadh. Get free quotes for HVAC and construction services. Emergency HVAC repair available 24/7. Call +966 53 616 1198 or visit our office in Riyadh."
+      keywords="Contact Licensed HVAC Contractor Riyadh, مقاول تكييف مرخص الرياض, HVAC Quote Request Riyadh, Emergency HVAC Contact Riyadh, HVAC Consultation Riyadh, HVAC Customer Service Riyadh, HVAC Support Riyadh, HVAC Office Riyadh"
       url="/contact" :structured-data="contactStructuredData" />
 
     <!-- Hero Section -->
@@ -229,7 +229,8 @@ const contactStructuredData = {
       "addressLocality": "Riyadh"
     },
     "email": "info@alsaeedstar.com",
-    "url": "https://alsaeedstar.com"
+    "url": "https://alsaeedstar.com",
+    "alternateName": "مقاول تكييف مرخص الرياض"
   }
 }
 
