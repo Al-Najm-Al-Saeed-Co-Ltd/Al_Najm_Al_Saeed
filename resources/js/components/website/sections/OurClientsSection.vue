@@ -5,10 +5,10 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <span class="inline-block px-4 py-2 bg-brand-green text-white text-sm font-semibold rounded-full mb-4">
-          Trusted Partners
+          Our Clients
         </span>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Our Valued Clients
+          Trusted Partners
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           We're proud to serve industry leaders and growing businesses across various sectors
@@ -16,23 +16,21 @@
       </div>
 
       <!-- Client Logos Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
-        <div 
-          v-for="(client, index) in clients" 
-          :key="client.id"
-          :class="[
-            'transition-all duration-1000',
-            `delay-${index * 100}`,
-            visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          ]" 
-          class="bg-gray-50 rounded-2xl p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
-        >
-          <div class="text-center">
-            <div :class="`w-16 h-16 ${client.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`">
-              <component :is="client.icon" :class="`w-8 h-8 ${client.iconColor}`" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-16">
+        <div v-for="(client, index) in clients" :key="client.id" :class="[
+          'transition-all duration-1000',
+          `delay-${index * 100}`,
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        ]"
+          class="bg-brand-green/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 flex items-center justify-center border border-brand-green/20 hover:border-brand-green/40 hover:shadow-lg transition-all duration-300">
+          <div class="text-center w-full">
+            <div
+              class="w-36 h-36 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 border border-brand-green/10">
+              <img :src="client.logo" :alt="client.name" loading="lazy"
+                class="w-32 h-32 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain" />
             </div>
-            <h3 class="font-semibold text-gray-900">{{ client.name }}</h3>
-            <p class="text-sm text-gray-600">{{ client.industry }}</p>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{{ client.name }}</h3>
+            <p class="text-gray-600 leading-relaxed">{{ client.industry }}</p>
           </div>
         </div>
       </div>
@@ -42,7 +40,6 @@
 </template>
 
 <script setup>
-import { Building, Building2 } from 'lucide-vue-next'
 
 // Props
 const props = defineProps({
@@ -56,68 +53,81 @@ const props = defineProps({
 const clients = [
   {
     id: 1,
-    icon: Building,
-    bgColor: 'bg-blue-100',
-    iconColor: 'text-blue-600',
-    name: 'Tech Solutions Inc.',
-    industry: 'Technology'
+    name: 'Ministry Of Sports',
+    industry: 'Government',
+    logo: '/assets/clients/our_clients_1.png'
   },
   {
     id: 2,
-    icon: Building2,
-    bgColor: 'bg-green-100',
-    iconColor: 'text-green-600',
-    name: 'BuildCorp',
-    industry: 'Construction'
+    name: 'Al Qussie International Company',
+    industry: 'International',
+    logo: '/assets/clients/our_clients_2.png'
   },
   {
     id: 3,
-    icon: Building2,
-    bgColor: 'bg-purple-100',
-    iconColor: 'text-purple-600',
-    name: 'Modern Enterprises',
-    industry: 'Manufacturing'
+    name: 'M Al-Shawi Est.',
+    industry: 'Construction',
+    logo: '/assets/clients/our_clients_3.png'
   },
   {
     id: 4,
-    icon: Building,
-    bgColor: 'bg-orange-100',
-    iconColor: 'text-orange-600',
-    name: 'Healthcare Plus',
-    industry: 'Healthcare'
+    name: 'Al Majal Al Arabi Group',
+    industry: 'Group',
+    logo: '/assets/clients/our_clients_4.png'
   },
   {
     id: 5,
-    icon: Building2,
-    bgColor: 'bg-red-100',
-    iconColor: 'text-red-600',
-    name: 'Retail Group',
-    industry: 'Retail'
+    name: 'Zamil Air Conditioners',
+    industry: 'HVAC',
+    logo: '/assets/clients/our_clients_5.png'
   },
   {
     id: 6,
-    icon: Building,
-    bgColor: 'bg-indigo-100',
-    iconColor: 'text-indigo-600',
-    name: 'Finance Corp',
-    industry: 'Finance'
+    name: 'Madarat Alwasat For Contracting Company',
+    industry: 'Contracting',
+    logo: '/assets/clients/our_clients_6.png'
   },
   {
     id: 7,
-    icon: Building2,
-    bgColor: 'bg-teal-100',
-    iconColor: 'text-teal-600',
-    name: 'Education Hub',
-    industry: 'Education'
+    name: 'Al Taj Al Mudee Contracting Co.',
+    industry: 'Contracting',
+    logo: '/assets/clients/our_clients_7.png'
   },
   {
     id: 8,
-    icon: Building,
-    bgColor: 'bg-pink-100',
-    iconColor: 'text-pink-600',
-    name: 'Hospitality Group',
-    industry: 'Hospitality'
+    name: 'Riyadh Chamber',
+    industry: 'Chamber',
+    logo: '/assets/clients/our_clients_8.png'
+  },
+  {
+    id: 9,
+    name: 'Al Mabani General Contractors',
+    industry: 'Contracting',
+    logo: '/assets/clients/our_clients_9.png'
+  },
+  {
+    id: 10,
+    name: 'Saudi Cycling Federation',
+    industry: 'Sports',
+    logo: '/assets/clients/our_clients_10.png'
+  },
+  {
+    id: 11,
+    name: 'Arrouq Al Jouz Trading Company',
+    industry: 'Trading',
+    logo: '/assets/clients/our_clients_11.png'
+  },
+  {
+    id: 12,
+    name: 'Nasma Al Farris contracting & Fabrication',
+    industry: 'Fabrication',
+    logo: '/assets/clients/our_clients_12.png'
+  },
+  {
+    id: 13,
+    name: 'Awwad Arabia Refrigeration & Air Conditioning LLC',
+    industry: 'HVAC',
+    logo: '/assets/clients/our_clients_13.png'
   }
 ]
 </script>
-
