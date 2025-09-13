@@ -22,12 +22,12 @@
           `delay-${index * 100}`,
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         ]"
-          class="bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
+          class="bg-brand-green/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 flex items-center justify-center border border-brand-green/20 hover:border-brand-green/40 hover:shadow-lg transition-all duration-300">
           <div class="text-center w-full">
             <div
-              class="w-28 h-28 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              class="w-36 h-36 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4 border border-brand-green/10">
               <img :src="client.logo" :alt="client.name"
-                class="w-24 h-24 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain" />
+                class="w-32 h-32 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain" />
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">{{ client.name }}</h3>
             <p class="text-gray-600 leading-relaxed">{{ client.industry }}</p>
