@@ -2,7 +2,7 @@
   <!-- About Hero Section -->
   <section id="about" class="hero-gradient min-h-[70vh] flex items-center relative overflow-hidden pt-20 sm:pt-24">
     <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-16 sm:py-20">
       <div class="text-center text-white">
         <!-- Breadcrumb -->
         <nav class="flex justify-center mb-8" aria-label="Breadcrumb">

@@ -2,7 +2,7 @@
   <!-- Hero Section -->
   <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-20 sm:pt-24">
     <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-16 sm:py-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left Column - Text Content -->
         <div class="text-white order-2 lg:order-1">
