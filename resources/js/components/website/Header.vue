@@ -41,8 +41,8 @@
 
       <!-- Mobile Navigation -->
       <Transition enter-active-class="transition-all duration-250 ease-out" enter-from-class="opacity-0 max-h-0"
-        enter-to-class="opacity-100 max-h-96" leave-active-class="transition-all duration-200 ease-in"
-        leave-from-class="opacity-100 max-h-96" leave-to-class="opacity-0 max-h-0">
+        enter-to-class="opacity-100 max-h-[500px]" leave-active-class="transition-all duration-200 ease-in"
+        leave-from-class="opacity-100 max-h-[500px]" leave-to-class="opacity-0 max-h-0">
         <div v-show="isMobileMenuOpen" class="md:hidden border-t border-white/20 overflow-hidden relative z-10">
           <nav class="px-6 py-4 space-y-2" aria-label="Mobile navigation">
             <Link v-for="item in navigationItems" :key="item.href" :href="item.href"
